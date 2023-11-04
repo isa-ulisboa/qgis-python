@@ -6,10 +6,14 @@ Instructor: Manuel Campagnolo
 
 ## Contents
 
+* [Main resources](#main-resources-for-the-course )
 * [QGIS instalation](#qgis-instalation)
 * [Useful links](#some-useful-links)
 
+## Main resources for the course 
 
+* Course tutorial and a reference guide: PyQGIS Developer Cookbook [https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html] or [https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf]
+  
 ## QGIS instalation:
 
 *  **Windows**: Follow instructions for [installing QGIS via the OSGeo4W distribution manager ](https://www.e-education.psu.edu/geog489/node/2294). After installation, you can verify the path with `sys.executable` which should return something like `C:\\OSGeo4W\\bin\\qgis-ltr-bin.exe`. You can also follow the video [install QGIS via OSGeo4W](https://www.youtube.com/watch?v=jtHnqvfa6is).
@@ -21,8 +25,8 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
   - 1st: go to [https://qgis.org/en/site/forusers/download.html] and download OSGeo4W Network installer (Window users)
   - 2nd: execute the downloaded file `osgeo4w-setup.exe` (follow instructions in [https://www.e-education.psu.edu/geog489/node/2294]): this will take some time. Files will be typically installed in `C:\OSGeo4W`. Note: to uninstall OSGeo4W, run `osgeo4w-setup.exe` and choose advanced installation and choose the packages you want to uninstall (can choose all). Then delete OSGeo4W folder.
   - Important files that are created during installation:
-    - C:\OSGeo4W\OSGeo4W.bat - This opens the OSGeo4W shell that can be used for executing python scripts from the command line.
-    - C:\OSGeo4W\bin\qgis-ltr-bin.exe - This is the main QGIS executable that you need to run for starting QGIS 3.
+    - `C:\OSGeo4W\OSGeo4W.bat` - This opens the OSGeo4W shell that can be used for executing python scripts from the command line.
+    - `C:\OSGeo4W\bin\qgis-ltr-bin.exe` - This is the main QGIS executable that you need to run for starting QGIS 3.
     - Obs: we will execute scripts directly in QGIS, so the OSGeo4W shell (windows key+ OSGeo4W shell) will only be needed to install Python packages (see below).
 2. To run the Python interpreter from the OSGeo4W shell one should execute `python-qgis-ltr` (you can exit with `quit()`).
   - [Installing pip](https://pip.pypa.io/en/stable/installation/): most likely not necessary since it should be included in the above installation
