@@ -5,7 +5,7 @@ Instructor: Manuel Campagnolo
 ## Contents
 
 * [QGIS instalation](#qgis-instalation)
-* [Links for the course](#some-useful-links)
+* [Useful links](#some-useful-links)
 
 
 ## QGIS Instalation:
@@ -33,15 +33,13 @@ Below are included step-bystep instruction for installing QGIS through OSGeo4W (
 
 ## Some useful links
 
-
-
 ### Documentation (QGIS, PyQGIS):
 
 * (main resource: tutorial and a reference guide) PyQGIS Developer Cookbook. [https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html] or [https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf]
 * Documentation for QGIS (also accessible through QGIS Python editor). [https://docs.qgis.org/3.28/en/docs/index.html]
 * QGIS Python API:  [https://qgis.org/pyqgis/master/core/index.html]
 
-### Introductory tutorials on PyQGIS:
+### Introductory tutorials on PyQGIS
 Broad range tutorials:
 * PyQGIS 101: Introduction to QGIS Python programming for non-programmers. [https://anitagraser.com/pyqgis-101-introduction-to-qgis-python-programming-for-non-programmers/]
 * Tutorial on QGIS 3 programming with Python (PyQGIS): [https://www.geodose.com/p/pyqgis.html]
@@ -50,21 +48,22 @@ Broad range tutorials:
 * QGIS Python course by Victor Olaya: [https://github.com/volaya/qgis-python-course]
 * Automating QGIS3 with Python: [https://www.udemy.com/course/automating-qgis-3xx-with-python/learn/lecture/15679972#overview]
 * QGIS Python Tutorial (Open source options PyQGIS Tutorial) [https://www.youtube.com/watch?v=X-LvGvNor4E]
+  
 More specific topics:
 * PyQGIS: Create and Print a Map Layout with Python: [https://opensourceoptions.com/pyqgis-create-and-print-a-map-layout-with-python/]
-* Symbolizing Vector and Raster Layers (2017): [https://www.gislounge.com/symbolizing-vector-and-raster-layers-qgis-python-programming-cookbook/]
+* Symbolizing Vector and Raster Layers (2015): [https://www.gislounge.com/symbolizing-vector-and-raster-layers-qgis-python-programming-cookbook/]
 * An Intro to the Earth Engine Python API [https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb]
 
-### Tutorial on creating plugins in QGIS3: 
+### Tutorial on creating plugins in QGIS3
 * [https://www.qgistutorials.com/en/docs/3/building_a_python_plugin.html]
  
-### Geopackage and SQLite:
+### Geopackage and SQLite
 
 * How to create and populate a geopackage in QGIS ([video](https://www.youtube.com/watch?v=rLLP7NImZsU))
 * [Load geopackage layers with PyQGIS](https://anitagraser.com/pyqgis-101-introduction-to-qgis-python-programming-for-non-programmers/pyqgis-101-creating-functions-to-load-geopackage-layers/)
 * [How do I do that in SpatialLite and SQLite](https://www.researchgate.net/profile/Arthur-Lembo/publication/313236676_How_do_I_do_that_in_SpatiaLiteSQLite_Illustrating_Classic_GIS_Tasks/links/5893493645851563f828e2de/How-do-I-do-that-in-SpatiaLite-SQLite-Illustrating-Classic-GIS-Tasks.pdf?_sg%5B0%5D=KV_noEuBaQYN_lsdLb8UHcCU0q0Qg1eb6XEsV_zS-EAJdcQ5lGHcDAp07kzuH8bY-ylR1EQmc_JzCwPeMFvO8w.sAO2zeigLecEIg79M9A8H-I8Xqnwkbd1eMEgq8M75MJIbEFy-VC2q_-NnURsSRpRZoxHXhXC8S1oj449J0l5Mw&_sg%5B1%5D=92xoHnfLzUsK1DLwsPzVTrFWy9wjdsZDvdkFL0Kcnur_fQCQSp09YG44puo5ezPLQdMA-M0KWKjbm34fx87kiuvNZ2r1nslGjaPYOxOWTbKJ.sAO2zeigLecEIg79M9A8H-I8Xqnwkbd1eMEgq8M75MJIbEFy-VC2q_-NnURsSRpRZoxHXhXC8S1oj449J0l5Mw&_iepl=) (many examples of spatial SQL queries)
 
-### Geoprocessing with Python (not just with QGIS): 
+### Geoprocessing with Python (not just with QGIS)
 * Geocomputation with Python: [https://py.geocompx.org/]. Note: if you have experience on geocomputation with R, check out [https://geocompx.org/] and the post [https://geocompx.org/post/2023/ogh23/] on "Geographic data analysis in R and Python: comparing code and outputs for vector data"
 * [PyGIS - Open Source Spatial Programming & Remote Sensing](https://pygis.io/docs/a_intro.html); geowombat; geopandas; rasterio
 * There are many available courses on geocomputation with Python, that explore the appropriate Python packages.
@@ -73,6 +72,6 @@ More specific topics:
 * W3schools: [https://www.w3schools.com/python/exercise.asp]
 * [Python Programming Beginner Tutorials by Corey Schafer](https://www.youtube.com/playlist?list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7):
 
-### GDAL: 
+### GDAL
 * An Introduction to GDAL: [https://www.youtube.com/watch?v=N_dmiQI1s24]
 
