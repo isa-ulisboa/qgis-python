@@ -4,8 +4,8 @@ Instructor: Manuel Campagnolo
 
 ## Contents
 
-* [QGIS instalation](#markdown-header-qgis-instalation)
-* [Links for the course](#markdown-header-some-useful-links)
+* [QGIS instalation](#qgis-instalation)
+* [Links for the course](#some-useful-links)
 
 
 ## QGIS Instalation:
