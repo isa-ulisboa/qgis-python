@@ -53,7 +53,8 @@ Broad range tutorials:
 * Customizing QGIS with Python (Full Course Material) 3.16: [https://courses.spatialthoughts.com/pyqgis-in-a-day.html]
 * QGIS Python course by Victor Olaya: [https://github.com/volaya/qgis-python-course]
 * Automating QGIS3 with Python: [https://www.udemy.com/course/automating-qgis-3xx-with-python/learn/lecture/15679972#overview]
-* QGIS Python Tutorial (Open source options PyQGIS Tutorial) [https://www.youtube.com/watch?v=X-LvGvNor4E]
+* QGIS Python Tutorial (Open source options PyQGIS Tutorial): [https://www.youtube.com/watch?v=X-LvGvNor4E]
+* Course Unleash QGIS with Python, 2nd edition: [https://github.com/manuelcampagnolo/PyQGIS_2nd_edition]
   
 More specific topics:
 * PyQGIS: Create and Print a Map Layout with Python: [https://opensourceoptions.com/pyqgis-create-and-print-a-map-layout-with-python/]
