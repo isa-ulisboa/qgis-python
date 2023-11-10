@@ -4,11 +4,18 @@ QGIS with Python: Open Campus course at ISA/ULisboa
 
 Instructor: Manuel Campagnolo
 
+Start: Monday November 13, 6pm, online (follow zoom link)
+
+Main links:
+* [Zoom link](https://videoconf-colibri.zoom.us/j/98394607195)
+* [Fenix: recordings and evaluation](https://fenix.isa.ulisboa.pt/courses/qwp-846413499991001)
+* [Shared folder (data for exercises)](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=gFAj1f) 
+
 ## Contents
 
-* [Main resources](#main-resources-for-the-course )
+* [Main resources](#main-resources-for-the-course)
 * [QGIS instalation](#qgis-instalation)
-* [Useful links](#some-useful-links)
+* [Other useful links](#some-useful-links)
 
 ## Main resources for the course 
 
