@@ -23,12 +23,12 @@ Main links:
   
 ## QGIS instalation:
 
-*  **Windows**: Follow instructions for [installing QGIS via the OSGeo4W distribution manager ](https://www.e-education.psu.edu/geog489/node/2294). After installation, you can verify the path with `sys.executable` which should return something like `C:\\OSGeo4W\\bin\\qgis-ltr-bin.exe`. You can also follow the video [install QGIS via OSGeo4W](https://www.youtube.com/watch?v=jtHnqvfa6is).
+*  **Windows**: Follow instructions for [installing QGIS via the OSGeo4W distribution manager](https://www.e-education.psu.edu/geog489/node/2294). After installation, you can verify the path with `sys.executable` which should return something like `C:\\OSGeo4W\\bin\\qgis-ltr-bin.exe`. You can also follow the video [install QGIS via OSGeo4W](https://www.youtube.com/watch?v=jtHnqvfa6is).
 *  **MacOS**: Follow instructions from [Download QGIS](https://www.qgis.org/en/site/forusers/download.html)
 
 Below are included step-by-step instruction for installing QGIS through OSGeo4W (Windows) and using OSGeo4W shell to install Python packages:
 
-1. Downloading and installing QGIS (instructions for installing QGIS via the OSGeo4W distribution manager). [https://www.e-education.psu.edu/geog489/node/2294]
+1. Downloading and installing QGIS (instructions for installing QGIS via the OSGeo4W distribution manager). (https://www.e-education.psu.edu/geog489/node/2294)
   - 1st: go to [https://qgis.org/en/site/forusers/download.html] and download OSGeo4W Network installer (Window users)
   - 2nd: execute the downloaded file `osgeo4w-setup.exe` (follow instructions in [https://www.e-education.psu.edu/geog489/node/2294]): this will take some time. Files will be typically installed in `C:\OSGeo4W`. Note: to uninstall OSGeo4W, run `osgeo4w-setup.exe` and choose advanced installation and choose the packages you want to uninstall (can choose all). Then delete OSGeo4W folder.
   - Important files that are created during installation:
