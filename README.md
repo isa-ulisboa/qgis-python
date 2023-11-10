@@ -4,7 +4,7 @@ QGIS with Python: Open Campus course at ISA/ULisboa
 
 Instructor: Manuel Campagnolo
 
-Start: Monday November 13, 6pm, online (follow zoom link)
+Start: Monday November 13, 6pm, online (follow zoom link). 10 sessions Mondays and Wednesdays 6-8pm until December 13.
 
 Main links:
 * [Zoom link](https://videoconf-colibri.zoom.us/j/98394607195)
