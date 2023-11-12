@@ -31,6 +31,7 @@ mycanvas=iface.mapCanvas()
 
 # And operate on canvas, e.g. Zoom to full extent
 mycanvas.zoomToFullExtent()
+mycanvas.refresh()
 
 # Layers in canvas
 # Try toggle visibility and see what changes on mycanvas.layers()
@@ -41,17 +42,23 @@ print(mycanvas.currentLayer())  # Can be None if no layer is selected
 # Try toggle visibility and see what changes on myproject.layers()
 print('Layers in myproject: ',myproject.mapLayers()) # dictionary
 
+# zoom to layer
 # Access layer in project if it exists
-layer_name='STOPVespa_2023_simplified'
+layer_name='Cont_Conc_CAOP2022'
 mylayers=myproject.mapLayersByName(layer_name)
-# Note: it would be more prudent to check that the list is not empty with `if mylayers:´
 # mylayer is the first in the returned list
 mylayer=mylayers[0]
-
-# zoom to layer
+# Note: it would be more prudent to check that the list is not empty with `if mylayers:´
+# Determine extent
 extent = mylayer.extent()
 mycanvas.setExtent(extent)
 mycanvas.refresh()
+
+# Access layer in project if it exists
+# Now for the other layer
+layer_name='STOPVespa_2023_simplified'
+mylayers=myproject.mapLayersByName(layer_name)
+mylayer=mylayers[0]
 
 # get the layer id
 print(mylayer.id())
