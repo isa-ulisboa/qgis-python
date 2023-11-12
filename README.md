@@ -59,7 +59,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 ## Sessions
 ### Session 1
   - Introduction to PyQGIG
-  - Task 1. Dataset STOPvespa. Download and unzip from [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/El72oJOE2CNIvS7EkKZ1gFMBg617KfumGlpplNP8BGGW5w?e=Vz5uOc). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, cretae the first script in Python to perform some simple operations: `extract by expression` and `extract by location`.
+  - Task 1. Dataset STOPvespa. Download `T01_stopvespa_processing_run` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, cretae the first script in Python to perform some simple operations: `extract by expression` and `extract by location`.
   
 ### Session 2
 ### Session 3
