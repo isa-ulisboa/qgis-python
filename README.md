@@ -17,6 +17,17 @@ Main links:
 
 * [Main resources](#main-resources-for-the-course)
 * [QGIS installation](#qgis-instalation)
+* [Sessions](#sessions):
+  - [Session 1](#session-1)
+  - [Session 2](#session-2)
+  - [Session 3](#session-3)
+  - [Session 4](#session-4)
+  - [Session 5](#session-5)
+  - [Session 6](#session-6)
+  - [Session 7](#session-7)
+  - [Session 8](#session-8)
+  - [Session 9](#session-9)
+  - [Session 10](#session-10)
 * [Other useful links](#some-useful-links)
 
 ## Main resources for the course 
@@ -44,6 +55,14 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
     - 2nd: execute `python -m pip install --user sklearn` in the OSGeo4W shell; 
     - 3rd: in the python console of QGIS do `import sklearn` to verify that it is loaded correctly (i.e. there is no error message)
     - Exercise: install package haversine (distances over the sphere).
+
+## Sessions
+### Session 1
+  - Introduction to PyQGIG
+  - Task 1. Dataset STOPvespa. Download and unzip from [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/El72oJOE2CNIvS7EkKZ1gFMBg617KfumGlpplNP8BGGW5w?e=Vz5uOc). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, cretae the first script in Python to perform some simple operations: `extract by expression` and `extract by location`.
+  
+### Session 2
+### Session 3
 
 
 ## Some useful links
