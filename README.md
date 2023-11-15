@@ -18,8 +18,8 @@ Main links:
 * [Main resources](#main-resources-for-the-course)
 * [QGIS installation](#qgis-instalation)
 * [Sessions](#sessions):
-  - [Session 1](#session-1)
-  - [Session 2](#session-2)
+  - [Session 1](#session-1): first example (STOPvespa dataset), `processing.run()`; 
+  - [Session 2](#session-2);
   - [Session 3](#session-3)
   - [Session 4](#session-4)
   - [Session 5](#session-5)
@@ -59,9 +59,11 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 ## Sessions
 ### Session 1
   - Introduction to PyQGIG
-  - Task 1. Dataset STOPvespa. Download `T01_stopvespa_processing_run` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, create the first script in Python to perform some simple operations: `extract by expression` and `extract by location`. To do this, one first execute the operations with tools in Processing/Toolbox, and then use Processing/History to copy the respective commands to the Python editor in the appropriate order.
+  - Task 1. Dataset STOPvespa. Download `T01_stopvespa_processing_run` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, create the first script in Python to perform some simple operations: `extract by expression` and `extract by location`. To do this, one first execute the operations with tools in Processing/Toolbox, and then use Processing/History to copy the respective commands to the Python editor in the appropriate order. Those topics are described in the first playlist in the [@qgisiwthpython Youtube channel](https://www.youtube.com/@qgisiwthpython).
   
 ### Session 2
+  - Acessing a QGIS project programmatically. Download `T02_stopvespa_project_canvas_layers` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
+  - Load layer with PyQGIS. Download `T04_stopvespa_add_layers_with_python` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
 ### Session 3
 
 
