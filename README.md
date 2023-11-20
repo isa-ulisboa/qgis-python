@@ -66,7 +66,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
   - Improve script created by copy/paste from processing history in `T01_stopvespa_processing_run`: download `T06_stopvespa_redo_processing_run` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
   
 ### Session 3
-  - Define functions and make Python code modular. Simplify code for the STOPvespa problem. Create a loop over wasp nest diameters and plot results with Python package `mathplotlib`. Download `T08_stopvespa_proc_run_myfunctions` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). You can also find the code in [Github](T08).
+  - Define functions and make Python code modular. Simplify code for the STOPvespa problem. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. Download `T08_stopvespa_proc_run_myfunctions` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). You can also find the code in [Github](T08).
 
 ### Session 4
  - Load layers with PyQGIS from shapefile and from csv file. Create and update QGIS project.
