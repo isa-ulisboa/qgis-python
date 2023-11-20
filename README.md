@@ -34,6 +34,7 @@ Main links:
 </details>
 <details>
 <summary> Step-by-step instructions for OSGeo4W (Windows)</summary>
+  
 Below are included step-by-step instruction for installing QGIS through OSGeo4W (Windows) and using OSGeo4W shell to install Python packages:
 1. Downloading and installing QGIS (instructions for installing QGIS via the OSGeo4W distribution manager). [geog489](https://www.e-education.psu.edu/geog489/node/2294)
   - 1st: go to [download](https://qgis.org/en/site/forusers/download.html) and download OSGeo4W Network installer (Window users)
@@ -61,7 +62,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 <details>
-  <summary>Session2: Access to layers; Access to project and canvas; Improving previous script</summary>
+  <summary>Session 2: Access to layers; Access to project and canvas; Improving previous script</summary>
 
   - Accessing a QGIS project programmatically. Download `T02_stopvespa_project_canvas_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
   - Improve script created by copy/paste from processing history in `T01_stopvespa_processing_run`: download `T06_stopvespa_redo_processing_run` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
@@ -96,19 +97,19 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
   <summary> Introductory tutorials on PyQGIS </summary>
   
 1. Broad range tutorials:
-* PyQGIS 101: Introduction to QGIS Python programming for non-programmers. [https://anitagraser.com/pyqgis-101-introduction-to-qgis-python-programming-for-non-programmers/](https://anitagraser.com/pyqgis-101-introduction-to-qgis-python-programming-for-non-programmers/)
-* Tutorial on QGIS 3 programming with Python (PyQGIS): [https://www.geodose.com/p/pyqgis.html](https://www.geodose.com/p/pyqgis.html)
-* QGIS Tutorials and Tips (with section on PyQGIS): [https://www.qgistutorials.com/en/index.html](https://www.qgistutorials.com/en/index.html)
-* Customizing QGIS with Python (Full Course Material) 3.16: [https://courses.spatialthoughts.com/pyqgis-in-a-day.html](https://courses.spatialthoughts.com/pyqgis-in-a-day.html)
-* QGIS Python course by Victor Olaya: [https://github.com/volaya/qgis-python-course](https://github.com/volaya/qgis-python-course)
-* Automating QGIS3 with Python: [https://www.udemy.com/course/automating-qgis-3xx-with-python/learn/lecture/15679972#overview](https://www.udemy.com/course/automating-qgis-3xx-with-python/learn/lecture/15679972#overview)
-* QGIS Python Tutorial (Open source options PyQGIS Tutorial): [https://www.youtube.com/watch?v=X-LvGvNor4E](https://www.youtube.com/watch?v=X-LvGvNor4E)
-* Course Unleash QGIS with Python, 2nd edition: [https://github.com/manuelcampagnolo/PyQGIS_2nd_edition](https://github.com/manuelcampagnolo/PyQGIS_2nd_edition)
+  * PyQGIS 101: Introduction to QGIS Python programming for non-programmers. [https://anitagraser.com/pyqgis-101-introduction-to-qgis-python-programming-for-non-programmers/](https://anitagraser.com/pyqgis-101-introduction-to-qgis-python-programming-for-non-programmers/)
+  * Tutorial on QGIS 3 programming with Python (PyQGIS): [https://www.geodose.com/p/pyqgis.html](https://www.geodose.com/p/pyqgis.html)
+  * QGIS Tutorials and Tips (with section on PyQGIS): [https://www.qgistutorials.com/en/index.html](https://www.qgistutorials.com/en/index.html)
+  * Customizing QGIS with Python (Full Course Material) 3.16: [https://courses.spatialthoughts.com/pyqgis-in-a-day.html](https://courses.spatialthoughts.com/pyqgis-in-a-day.html)
+  * QGIS Python course by Victor Olaya: [https://github.com/volaya/qgis-python-course](https://github.com/volaya/qgis-python-course)
+  * Automating QGIS3 with Python: [https://www.udemy.com/course/automating-qgis-3xx-with-python/learn/lecture/15679972#overview](https://www.udemy.com/course/automating-qgis-3xx-with-python/learn/lecture/15679972#overview)
+  * QGIS Python Tutorial (Open source options PyQGIS Tutorial): [https://www.youtube.com/watch?v=X-LvGvNor4E](https://www.youtube.com/watch?v=X-LvGvNor4E)
+  * Course Unleash QGIS with Python, 2nd edition: [https://github.com/manuelcampagnolo/PyQGIS_2nd_edition](https://github.com/manuelcampagnolo/PyQGIS_2nd_edition)
   
 2. More specific topics:
-* PyQGIS: Create and Print a Map Layout with Python: [https://opensourceoptions.com/pyqgis-create-and-print-a-map-layout-with-python/](https://opensourceoptions.com/pyqgis-create-and-print-a-map-layout-with-python/)
-* Symbolizing Vector and Raster Layers (2015): [https://www.gislounge.com/symbolizing-vector-and-raster-layers-qgis-python-programming-cookbook/](https://www.gislounge.com/symbolizing-vector-and-raster-layers-qgis-python-programming-cookbook/)
-* An Intro to the Earth Engine Python API [https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb](https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb)
+  * PyQGIS: Create and Print a Map Layout with Python: [https://opensourceoptions.com/pyqgis-create-and-print-a-map-layout-with-python/](https://opensourceoptions.com/pyqgis-create-and-print-a-map-layout-with-python/)
+  * Symbolizing Vector and Raster Layers (2015): [https://www.gislounge.com/symbolizing-vector-and-raster-layers-qgis-python-programming-cookbook/](https://www.gislounge.com/symbolizing-vector-and-raster-layers-qgis-python-programming-cookbook/)
+  * An Intro to the Earth Engine Python API [https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb](https://github.com/google/earthengine-community/blob/master/tutorials/intro-to-python-api/index.ipynb)
 
 </details>
 
