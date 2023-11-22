@@ -28,11 +28,16 @@ Main links:
 
 ## QGIS instalation:
 <details>
-<summary> Links for download</summary>
+
+  <summary> Links for download</summary>
+  
 *  **Windows**: Follow instructions for [installing QGIS via the OSGeo4W distribution manager](https://www.e-education.psu.edu/geog489/node/2294). You can also follow the video [install QGIS via OSGeo4W](https://www.youtube.com/watch?v=jtHnqvfa6is).
 *  **MacOS**: Follow instructions from [Download QGIS](https://www.qgis.org/en/site/forusers/download.html)
+
 </details>
+
 <details>
+  
 <summary> Step-by-step instructions for OSGeo4W (Windows)</summary>
   
 Below are included step-by-step instruction for installing QGIS through OSGeo4W (Windows) and using OSGeo4W shell to install Python packages:
