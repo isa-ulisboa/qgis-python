@@ -7,6 +7,7 @@ Instructor: Manuel Campagnolo
 Start: Monday November 13, 6pm, online (follow zoom link). 10 sessions Mondays and Wednesdays 6-8pm until December 13.
 
 Main links:
+* [QGIS with Python Github repository](https://github.com/isa-ulisboa/qgis-python)
 * [Zoom link](https://videoconf-colibri.zoom.us/j/98394607195)
 * [Shared folder: data for exercises](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh)
 * [Youtube channel](https://www.youtube.com/@qgisiwthpython)
