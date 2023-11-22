@@ -126,6 +126,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 <details>
   <summary>  Tutorial on creating plugins in QGIS3 </summary>
+  
 * [https://www.qgistutorials.com/en/docs/3/building_a_python_plugin.html](https://www.qgistutorials.com/en/docs/3/building_a_python_plugin.html)
 </details>
 
