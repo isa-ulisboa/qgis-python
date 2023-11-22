@@ -83,14 +83,17 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
   - Define functions and make Python code modular. Simplify code for the STOPvespa problem. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. Download `T08_stopvespa_proc_run_myfunctions` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). You can also find the code in [Github](T08).
 
+
+
 </details>
 
 <details>
   <summary> Session 4: Load layers with PyQGIS from shapefile and from csv file. Create and update QGIS project. </summary>
 
-  - Load layers with PyQGIS from shapefile and from csv file.
-  - Create and update QGIS project.
-
+  - Load layers with PyQGIS from shapefile and from csv file; Create and update QGIS project. Download `T04_stopvespa_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with the STOPvespa data set (csv with coordinates)
+  - Same problem, but with different data sets, and a more compact code. Download `T09_caop_ine_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with a new data set (CAOP, Milk production per county from INE). In this case the csv file does not have coordinates.
+  - For the Milk production problem, one needs to `edit` and `join` attribute tables. Download `T10_caop_ine_edit_and_join_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) to see how one can extend the code in T09 to do this.
+ 
 </details>
 
 ## Some useful links
