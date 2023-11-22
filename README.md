@@ -25,7 +25,6 @@ Main links:
 <details>
 <summary> See here</summary>
 
-
 * Course tutorial and a reference guide: [PyQGIS Developer Cookbook](https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html) or [pdf version](https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf)
 
 </details>
@@ -34,7 +33,6 @@ Main links:
 <details>
 
   <summary> Links for download</summary>
-  
   
 *  **Windows**: Follow instructions for [installing QGIS via the OSGeo4W distribution manager](https://www.e-education.psu.edu/geog489/node/2294). You can also follow the video [install QGIS via OSGeo4W](https://www.youtube.com/watch?v=jtHnqvfa6is).
 *  **MacOS**: Follow instructions from [Download QGIS](https://www.qgis.org/en/site/forusers/download.html)
@@ -45,7 +43,6 @@ Main links:
   
 <summary> Step-by-step instructions for OSGeo4W (Windows)</summary>
 
-  
 Below are included step-by-step instruction for installing QGIS through OSGeo4W (Windows) and using OSGeo4W shell to install Python packages:
 1. Downloading and installing QGIS (instructions for installing QGIS via the OSGeo4W distribution manager). [geog489](https://www.e-education.psu.edu/geog489/node/2294)
   - 1st: go to [download](https://qgis.org/en/site/forusers/download.html) and download OSGeo4W Network installer (Window users)
@@ -69,7 +66,6 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
   <summary> Session 1: Introduction; Python Console and editor in QGIS; Processing/History; `processing.run()`</summary>
   
-
   - Introduction to PyQGIS
   - Dataset STOPvespa. Download `T01_stopvespa_processing_run` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, create the first script in Python to perform some simple operations: `extract by expression` and `extract by location`. To do this, one first execute the operations with tools in Processing/Toolbox, and then use Processing/History to copy the respective commands to the Python editor in the appropriate order. Those topics are described in the first playlist in the [@qgisiwthpython Youtube channel](https://www.youtube.com/@qgisiwthpython).
 
@@ -152,6 +148,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 <details>
 <summary> Introduction to Python </summary>
+  
 * W3schools: [https://www.w3schools.com/python/exercise.asp](https://www.w3schools.com/python/exercise.asp)
 * [Python Programming Beginner Tutorials by Corey Schafer](https://www.youtube.com/playlist?list=PL-osiE80TeTskrapNbzXhwoFUiLCjGgY7):
 
@@ -159,5 +156,6 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 <details>
 <summary>GDAL</summary>
+  
 * An Introduction to GDAL: [https://www.youtube.com/watch?v=N_dmiQI1s24](https://www.youtube.com/watch?v=N_dmiQI1s24)
 </details>
