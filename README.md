@@ -27,10 +27,10 @@ Main links:
 
 * Course tutorial and a reference guide: [PyQGIS Developer Cookbook](https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html) or [pdf version](https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf)
 
-</details >
+</details>
 
 ## QGIS instalation:
-<details>
+<details markdown="block">
 
   <summary> Links for download</summary>
   
@@ -39,7 +39,7 @@ Main links:
 
 </details>
 
-<details>
+<details markdown="block">
   
 <summary> Step-by-step instructions for OSGeo4W (Windows)</summary>
 
@@ -62,7 +62,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 ## Sessions
-<details>
+<details markdown="block">
 
   <summary> Session 1: Introduction; Python Console and editor in QGIS; Processing/History; `processing.run()`</summary>
   
@@ -71,14 +71,14 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 </details>
 
-<details>
+<details markdown="block">
   <summary>Session 2: Access to layers; Access to project and canvas; Improving previous script</summary>
 
   - Accessing a QGIS project programmatically. Download `T02_stopvespa_project_canvas_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
   - Improve script created by copy/paste from processing history in `T01_stopvespa_processing_run`: download `T06_stopvespa_redo_processing_run` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
 </details>
 
-<details>
+<details markdown="block">
   <summary> Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib </summary>
 
   - Define functions and make Python code modular. Simplify code for the STOPvespa problem. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. Download `T08_stopvespa_proc_run_myfunctions` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). You can also find the code in [Github](T08).
@@ -87,7 +87,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 </details>
 
-<details>
+<details markdown="block">
   <summary> Session 4: Load layers with PyQGIS from shapefile and from csv file. Create and update QGIS project. Layer method "getFeatures" to access features and attributes of a layer. CAOP+INE milk production dataset </summary>
 
   - Load layers with PyQGIS from shapefile and from csv file; Create and update QGIS project. Download `T04_stopvespa_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with the STOPvespa data set (csv with coordinates)
@@ -97,7 +97,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 ## Some useful links
-<details>
+<details markdown="block">
   <summary> Documentation (QGIS, PyQGIS) </summary>
 
   * (main resource: tutorial and a reference guide) PyQGIS Developer Cookbook. [https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html](https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html) or [https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf](https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf)
@@ -106,7 +106,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 </details>
 
-<details>
+<details markdown="block">
   <summary> Introductory tutorials on PyQGIS </summary>
   
 1. Broad range tutorials:
@@ -126,13 +126,13 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 </details>
 
-<details>
+<details markdown="block">
   <summary>  Tutorial on creating plugins in QGIS3 </summary>
   
 * [https://www.qgistutorials.com/en/docs/3/building_a_python_plugin.html](https://www.qgistutorials.com/en/docs/3/building_a_python_plugin.html)
 </details>
 
-<details> 
+<details markdown="block"> 
   
   <summary> Geopackage and SQLite </summary>
 
@@ -142,7 +142,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 </details>
 
-<details>
+<details markdown="block">
 <summary> Geoprocessing with Python (not just with QGIS) </summary>
   
 * Geocomputation with Python: [https://py.geocompx.org/](https://py.geocompx.org/). Note: if you have experience on geocomputation with R, check out [https://geocompx.org/](https://geocompx.org/) and the post [https://geocompx.org/post/2023/ogh23/](https://geocompx.org/post/2023/ogh23/) on "Geographic data analysis in R and Python: comparing code and outputs for vector data"
@@ -150,7 +150,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 * There are many available courses on geocomputation with Python, that explore the appropriate Python packages.
 </details>
 
-<details>
+<details markdown="block">
 <summary> Introduction to Python </summary>
   
 * W3schools: [https://www.w3schools.com/python/exercise.asp](https://www.w3schools.com/python/exercise.asp)
@@ -158,7 +158,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 </details>
 
-<details>
+<details markdown="block">
 <summary>GDAL</summary>
   
 * An Introduction to GDAL: [https://www.youtube.com/watch?v=N_dmiQI1s24](https://www.youtube.com/watch?v=N_dmiQI1s24)
