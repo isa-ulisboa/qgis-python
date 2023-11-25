@@ -64,7 +64,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 ## Sessions
 <details markdown="block">
 
-  <summary> Session 1: Introduction; Python Console and editor in QGIS; Processing/History; `processing.run()`</summary>
+  <summary>Session 1: Introduction; Python Console and editor in QGIS; Processing/History; `processing.run()`</summary>
   
   - Introduction to PyQGIS
   - Dataset STOPvespa. Download `T01_stopvespa_processing_run` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, create the first script in Python to perform some simple operations: `extract by expression` and `extract by location`. To do this, one first execute the operations with tools in Processing/Toolbox, and then use Processing/History to copy the respective commands to the Python editor in the appropriate order. Those topics are described in the first playlist in the [@qgisiwthpython Youtube channel](https://www.youtube.com/@qgisiwthpython).
@@ -79,16 +79,14 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 <details markdown="block">
-  <summary> Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib </summary>
+  <summary>Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib </summary>
 
   - Define functions and make Python code modular. Simplify code for the STOPvespa problem. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. Download `T08_stopvespa_proc_run_myfunctions` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). You can also find the code in [Github](T08).
-
-
 
 </details>
 
 <details markdown="block">
-  <summary> Session 4: Load layers with PyQGIS from shapefile and from csv file. Create and update QGIS project. Layer method "getFeatures" to access features and attributes of a layer. CAOP+INE milk production dataset </summary>
+  <summary>Session 4: Load layers with PyQGIS from shapefile and from csv file. Create and update QGIS project. Layer method "getFeatures" to access features and attributes of a layer. CAOP+INE milk production dataset </summary>
 
   - Load layers with PyQGIS from shapefile and from csv file; Create and update QGIS project. Download `T04_stopvespa_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with the STOPvespa data set (csv with coordinates)
   - Same problem, but with different data sets, and a more compact code. Download `T09_caop_ine_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with a new data set (CAOP, Milk production per county from INE). In this case the csv file does not have coordinates.
