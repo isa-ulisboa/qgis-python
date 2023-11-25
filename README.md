@@ -22,7 +22,7 @@ Main links:
 
 ## Main resources for the course 
 
-<details>
+<details markdown="block">
 <summary> See here</summary>
 
 * Course tutorial and a reference guide: [PyQGIS Developer Cookbook](https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html) or [pdf version](https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf)
