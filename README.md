@@ -24,10 +24,10 @@ Main links:
 
 <details>
 <summary> See here</summary>
-<pre>
+
 * Course tutorial and a reference guide: [PyQGIS Developer Cookbook](https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html) or [pdf version](https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf)
-</pre>
-</details>
+
+</details >
 
 ## QGIS instalation:
 <details>
