@@ -80,7 +80,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
  <details markdown="block">
 
- <summary>Examples of code from T02 and T06</summary>
+ <summary>Examples of code from T02 and T06</summary><blockquote>
 
 ```
 def my_find_layer(ln):
@@ -97,7 +97,7 @@ def my_find_layer(ln):
         print('Warning: no matches for', ln)
         return None
 ```
-</details>
+</blockquote></details>
 
 </blockquote></details>
 
