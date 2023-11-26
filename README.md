@@ -97,9 +97,9 @@ def my_find_layer(ln):
         print('Warning: no matches for', ln)
         return None
 ```
+</details>
 
- </details>
-
+</details>
 
 <details markdown="block">
   <summary>Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib </summary>
