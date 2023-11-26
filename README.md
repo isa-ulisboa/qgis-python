@@ -72,7 +72,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 <details markdown="block">
-<summary>Session 2: Access to layers; Access to project and canvas; Improving previous script</summary><blockquote>
+<summary>Session 2: Access to layers; Access to project and canvas; Improving previous script</summary>
 
   - Accessing a QGIS project programmatically. Download `T02_stopvespa_project_canvas_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
   - Improve script created by copy/paste from processing history in `T01_stopvespa_processing_run`: download `T06_stopvespa_redo_processing_run` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
@@ -99,7 +99,7 @@ def my_find_layer(ln):
 ```
 </blockquote></details>
 
-</blockquote></details>
+</details>
 
 <details markdown="block">
   <summary>Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib </summary>
