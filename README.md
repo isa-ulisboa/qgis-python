@@ -80,22 +80,21 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
   - The following function returns a layer which name matches a layer in the current project:
 
-```
-def my_find_layer(ln):
-    """
-        tries to find a project layer which name is ln
-    """
-    layers=QgsProject().instance().mapLayersByName(ln)
-    if len(layers)>1:
-        print('Warning: there is more than one layer with name',ln)
-        return layers[0]
-    elif len(layers)==1:
-        return layers[0]
-    else:
-        print('Warning: no matches for', ln)
-        return None
-```
-
+  ```
+  def my_find_layer(ln):
+      """
+          tries to find a project layer which name is ln
+      """
+      layers=QgsProject().instance().mapLayersByName(ln)
+      if len(layers)>1:
+          print('Warning: there is more than one layer with name',ln)
+          return layers[0]
+      elif len(layers)==1:
+          return layers[0]
+      else:
+          print('Warning: no matches for', ln)
+          return None
+  ```
 </details>
 
 <details markdown="block">
