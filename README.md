@@ -94,15 +94,15 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
             print('Warning: no matches for', ln)
             return None
     ```
-- Function that removes a layer from the project:
-    ```
-    def my_remove_layer(layer):
-    """
-        removes layer from project
-    """
-    if layer in QgsProject().instance().mapLayers().values():
-        QgsProject().instance().removeMapLayer(layer.id())
-    ```
+  - Function that removes a layer from the project:
+      ```
+      def my_remove_layer(layer):
+      """
+          removes layer from project
+      """
+      if layer in QgsProject().instance().mapLayers().values():
+          QgsProject().instance().removeMapLayer(layer.id())
+      ```
 </details>
 
 <details markdown="block">
