@@ -69,7 +69,7 @@ def main():
         vespa_D=my_processing_run("native:extractbyexpression", vespa, params, ln)
         
         # Extract by location
-        params={'PREDICATE':[1], 'INTERSECT':vespa_D,}
+        params={'PREDICATE':[1], 'INTERSECT':vespa_D}
         ln='counties_with_nests_larger_than_'+str(D)
         conc_D=my_processing_run("native:extractbylocation", caop, params, ln)
         
