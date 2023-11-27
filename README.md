@@ -88,7 +88,14 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
   - Load layers with PyQGIS from shapefile and from csv file; Create and update QGIS project. Download `T04_stopvespa_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with the STOPvespa data set (csv with coordinates)
   - Same problem, but with different data sets, and a more compact code. Download `T09_caop_ine_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with a new data set (CAOP, Milk production per county from INE). In this case the csv file does not have coordinates.
   - For the Milk production problem described in [T09 problem description](T09/problem_description.md), one needs to `edit` and `join` attribute tables. Download `T10_caop_ine_edit_and_join_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) to see how one can extend the code in T09 to do this.
- 
+    
+</details>
+
+<details markdown="block">
+  <summary>Session 5: One more example of editing the attribute layer; Symbology for vector layers: single symbol and categorized symbol </summary>
+  
+  - The appearance of the layer is given by `layer.renderer()`: this includes symbols associated to the layer. Symbols are classes which take care of drawing of visual representation of features, while renderers determine what symbol will be used for a particular feature. Symbols are generated from classes `QgsMarkerSymbol`, `QgsLineSymbol` and `QgsFillSymbol` depending on the geometry of the feature. The following table show the combinations of geometries and types for single, categorized and graduated renderers [geometry vs type](vector_layers_symbols.png).
+  
 </details>
 
 ## Scripts
@@ -266,6 +273,12 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 <details markdown="block">
   <summary>Edit attribute table, add new attribute, compute attribute values</summary>
+
+  Often, we need to make changes on vector layers in QGIS. Vector layers have attributes (aka fields) that correspond to the *columns* of the layer's **attribute table**. There is one special field which is the **geometry** and contains the geometry of each feature of the layer. The features correspond to the *rows* of the attribute table. Each feature has therefore a geometry (unless the layer is just a non spatial regular table) and has values for all attributes. 
+  
+  PyQGIS provides methods to add new attributes to the attribute table with `layer.addAttribute(fld)` where `fld` is an object of class `QgsField`. It also provides a method to delete attributes, with `layer.deleteAttribute(index_of_the_field)`. After changes are made, the layer needs to be updated with `layer.updateFields()`.
+  
+   To iterate over all features from a layer, on can use the *for loop* `for feat in layer.getFeatures():`. Then, the value of some attribute is accessible with `feat['attribute name']`. One can also add a new feature to the attribute table with `layer.addFeature(feat)` where `feat` is an object of class `QgsFeature`, or remove a feature with `layer.deleteFeature(id_of_the_feature)`. The geometry of some feature can be set or changed with `feat.setGeometry(geom)`or `layer.changeGeometry(id_of_the_feature,geom)`, where `geom`is an object of class `QgsGeometry`. After changes are made, the feature needs to be updated with `layer.updateFeature(feat)`.
   
   - Function that edits a vector layer and computes the values of one field as a function of the values of the other field (T10):
     ```
