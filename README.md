@@ -92,7 +92,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 <details markdown="block">
-  <summary>Session 5: One more example of editing the attribute layer; Symbology for vector layers: single symbol and categorized symbol; T11, T12, T13, T14 </summary>
+  <summary>Session 5: Layer capabilities for editing; Symbology for vector layers: single symbol and categorized symbol; T11, T12, T13, T14 </summary>
   
   - The appearance of the layer is given by `layer.renderer()`: this includes symbols associated to the layer. Symbols are classes which take care of drawing of visual representation of features, while renderers determine what symbol will be used for a particular feature. Symbols are generated from classes `QgsMarkerSymbol`, `QgsLineSymbol` and `QgsFillSymbol` depending on the geometry of the feature. The following table show the combinations of geometries and types for single, categorized and graduated renderers [geometry vs type](vector_layers_symbols.png).
   
