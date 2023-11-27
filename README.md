@@ -1,6 +1,6 @@
 # qgis-python
 
-QGIS with Python: Open Campus course at ISA/ULisboa
+[QGIS with Python: Open Campus course at ISA/ULisboa](https://www.isa-opencampus.pt/qgis-com-python)
 
 Instructor: Manuel Campagnolo
 
@@ -8,26 +8,22 @@ Start: Monday November 13, 6pm, online (follow zoom link). 10 sessions Mondays a
 
 Main links:
 * [Zoom link](https://videoconf-colibri.zoom.us/j/98394607195)
-* [Shared folder: data for exercises](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh)
-* [Youtube channel](https://www.youtube.com/@qgisiwthpython)
 * [Fenix: class recordings and evaluation](https://fenix.isa.ulisboa.pt/courses/qwp-846413499991001)
-* [Open Campus course webpage](https://www.isa-opencampus.pt/qgis-com-python)
-
+* [Shared folder: data for exercises](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh)
+* [GitHub site, with access to python scripts and searchable](https://github.com/isa-ulisboa/qgis-python)
+* [Youtube channel](https://www.youtube.com/@qgisiwthpython)
+  
 ## Contents
 
 * [Main resources](#main-resources-for-the-course)
 * [QGIS installation](#qgis-instalation)
 * [Sessions](#sessions)
+* [Scripts: functions and examples](#scripts)
 * [Other useful links](#some-useful-links)
 
 ## Main resources for the course 
 
-<details markdown="block">
-<summary> See here</summary>
-
 * Course tutorial and a reference guide: [PyQGIS Developer Cookbook](https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html) or [pdf version](https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf)
-
-</details>
 
 ## QGIS instalation:
 <details markdown="block">
@@ -64,7 +60,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 ## Sessions
 <details markdown="block">
 
-  <summary>Session 1: Introduction; Python Console and editor in QGIS; Processing/History; `processing.run()`</summary>
+  <summary>Session 1: Introduction; Python Console and editor in QGIS; Processing/History; processing.run(); STOPvespa dataset; T01</summary>
   
   - Introduction to PyQGIS
   - Dataset STOPvespa. Download `T01_stopvespa_processing_run` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, create the first script in Python to perform some simple operations: `extract by expression` and `extract by location`. To do this, one first execute the operations with tools in Processing/Toolbox, and then use Processing/History to copy the respective commands to the Python editor in the appropriate order. Those topics are described in the first playlist in the [@qgisiwthpython Youtube channel](https://www.youtube.com/@qgisiwthpython).
@@ -72,12 +68,50 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 <details markdown="block">
-<summary>Session 2: Access to layers; Access to project and canvas; Improving previous script</summary>
+<summary>Session 2: Access to layers; Access to project and canvas; Zoom to layer; Improving previous script; T02; T06</summary>
 
   - Accessing a QGIS project programmatically. Download `T02_stopvespa_project_canvas_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
   - Improve script created by copy/paste from processing history in `T01_stopvespa_processing_run`: download `T06_stopvespa_redo_processing_run` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
 
+</details>
 
+<details markdown="block">
+  <summary>Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib; T08 </summary>
+
+  - Define functions and make Python code modular. Simplify code for the STOPvespa problem. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. Download `T08_stopvespa_proc_run_myfunctions` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). 
+  
+</details>
+
+<details markdown="block">
+  <summary>Session 4: Load layers with PyQGIS from shapefile and from csv file; create and update QGIS project; edit attribute table; CAOP+INE milk production dataset; T09; T10 </summary>
+
+  - Load layers with PyQGIS from shapefile and from csv file; Create and update QGIS project. Download `T04_stopvespa_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with the STOPvespa data set (csv with coordinates)
+  - Same problem, but with different data sets, and a more compact code. Download `T09_caop_ine_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with a new data set (CAOP, Milk production per county from INE). In this case the csv file does not have coordinates.
+  - For the Milk production problem described in [T09 problem description](T09/problem_description.md), one needs to `edit` and `join` attribute tables. Download `T10_caop_ine_edit_and_join_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) to see how one can extend the code in T09 to do this.
+ 
+</details>
+
+## Scripts
+<details markdown="block">
+  <summary>Project, canvas, manipulate layers and paths</summary>
+
+  Below, **it is supposed that there is already a project loaded in QGIS with vector layers**. The scripts below allow to manipulate those layers, zoom to layer, remove layers from the project, etc.
+
+  - Function that returns the path to the current project:
+    ```
+    def my_project_path(my_project):
+        """
+            output: Path to the folder where the project is
+        """
+        # If there is a project, mufolder will be location of the project
+        if my_project.fileName()!='':
+            print('project', Path(my_project.fileName()).stem ,  'loaded')
+            return Path(my_project.homePath())
+        else:
+            print('No project available')
+            return 0 # exits main if there is no project available
+    ```
+    
   - Function that returns a layer which name matches a layer in the current project:
     ```
     def my_find_layer(ln):
@@ -88,37 +122,194 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
         if len(layers)>1:
             print('Warning: there is more than one layer with name',ln)
             return layers[0]
-        elif len(layers)==1:
+        if len(layers)==1:
             return layers[0]
-        else:
-            print('Warning: no matches for', ln)
-            return None
+        print('Warning: no matches for', ln)
+        return None
+    ```
+  - Function that finds a layer which name contains the string "approx_ln":
+    ```
+    def my_find_approx_layer(approx_ln):
+        """
+            tries to find a layer which name includes approx_ln
+        """
+        layers=QgsProject().instance().mapLayers().values() # dictionairy of all layers
+        for layer in layers:
+            ln=layer.name()
+            if approx_ln in ln: # True if the layer name contains approx_ln
+                return my_find_layer(ln)
+        return None # in case no match is found
+    ```
+  - Function to zoom to the layer which name is layer_name:
+    ```
+    def my_zoom_to_layer(layer_name):
+        """
+            input: layer name
+            works if the project crs is compatible with extent of the input layer
+        """
+        # Access layer in project if it exists
+        mylayers=QgsProject().instance().mapLayersByName(layer_name)
+        # mylayer is the first in the returned list
+        if mylayers:
+            mylayer=mylayers[0]
+            # Determine extent
+            extent = mylayer.extent()
+            iface.mapCanvas().setExtent(extent) 
+            iface.mapCanvas().refresh()
     ```
   - Function that removes a layer from the project:
-      ```
-      def my_remove_layer(layer):
-      """
-          removes layer from project
-      """
-      if layer in QgsProject().instance().mapLayers().values():
-          QgsProject().instance().removeMapLayer(layer.id())
-      ```
+    ```
+    def my_remove_layer(layer):
+        """
+            removes layer from project
+        """
+        if layer in QgsProject().instance().mapLayers().values():
+            QgsProject().instance().removeMapLayer(layer.id())
+    ```
 </details>
 
 <details markdown="block">
-  <summary>Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib </summary>
+  <summary>Create new project, load vector layers and delimited text files, process layers with processing.run() and save output to file</summary>
 
-  - Define functions and make Python code modular. Simplify code for the STOPvespa problem. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. Download `T08_stopvespa_proc_run_myfunctions` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). You can also find the code in [Github](https://github.com/isa-ulisboa/qgis-python/tree/main/T08).
-
+  Functions below allow to process layers with `processing.run` and execute tools from QGIS processing toolbox. The best pratice while processing data consists in creating temporary layers until the final reult is obtained. Then, the final layer can be exported as a file (e.g. *shapefile*).
+  - Function that creates an empty project, with a name and saves it to a qgz file:
+    ```
+    def my_create_project(my_folder,project_name):
+        """
+            Create new project, set title, and save
+        """
+        my_project=QgsProject.instance() # QgsProject
+        my_project.clear() # Clear project 
+        my_project.setTitle(project_name)
+        project_file=str(my_folder/project_name)+'.qgz'
+        # Save project to file
+        my_project.write(project_file) # 
+    ```
+  - Function that reads a vector file, and adds to the project a clone of that file as a 'memory' layer:
+    ```
+    def my_add_to_memory_vector_layer_from_shapefile(fn,ln):
+        """
+             add and name vector layer from file
+             fn: string: path_to_file
+             ln: string: output layer name
+             output: layer copied to memory layer
+        """
+        mylayer=QgsVectorLayer(str(fn),"", "ogr")
+        mylayer.selectAll()
+        clone_layer = processing.run("native:saveselectedfeatures", {'INPUT': mylayer, 'OUTPUT': 'memory:'})['OUTPUT']
+        mylayer.removeSelection()
+        clone_layer.setName(ln)
+        QgsProject().instance().addMapLayer(clone_layer)
+        return clone_layer
+    ```
+  - Function that executes QGIS tool from processing toolbox with *processing.run*:
+    ```
+    def my_processing_run(operation,ln_input,dict_params,layer_name):
+        """ 
+            function to execute processing.run from a list of parameters
+            it creates a temporary output (in memory)
+            ln_input is either the input layer or the name (a string) of the input layer
+            dict_params: dictionary with operation parameters except 'INPUT' and 'OUTPUT'
+            layer_name: name for the output layer
+            output: output QgsVectorLayer
+        """
+        dict_params['INPUT']=ln_input
+        dict_params['OUTPUT']=QgsProcessing.TEMPORARY_OUTPUT
+        mylayer=processing.run(operation,dict_params)['OUTPUT']
+        mylayer.setName(layer_name)
+        QgsProject().instance().addMapLayer(mylayer)
+        return mylayer
+    ```
+    Example of application (T08):
+    ```
+    params={'PREDICATE':[1], 'INTERSECT':vespa_D}
+    conc_D=my_processing_run("native:extractbylocation", caop, params, ln)
+    ```
+  - Function that reads a delimited text file (e.g. csv or txt), sets encoding to 'utf-8' and adds a memory vector layer to the project:
+    ```
+    def my_add_layer_from_csv(fn,ln,params):
+        """
+            reads csv file and adds to project
+        """
+        # create uri as string
+        uri=fn.as_uri()+params
+        # create and load layer
+        mylayer = QgsVectorLayer(uri, '' , "delimitedtext")
+        # encoding
+        provider=mylayer.dataProvider()
+        if provider.encoding()!='UTF-8':
+            mylayer.dataProvider().setEncoding('UTF-8')
+        # set name
+        mylayer.setName(ln)
+        # add to project
+        QgsProject().instance().addMapLayer(mylayer)
+        return mylayer
+    ```
+    An example of a call to this function (T11):
+    ```
+    params_ine='?delimiter=;&detectTypes=yes&geomType=none'
+    ine=my_add_layer_from_csv(fn,'INE',params_ine)
+    ```
+  - Function that exports a temporary layer to a file (e.g. a *shapefile*):
+    ```
+    def my_export_layer_as_file(vlayer,fn):
+        """ 
+            inputs: vector layer and path to output file
+        """
+        if isinstance(vlayer,QgsVectorLayer):
+            # file path is converted into a string
+            processing.run("native:savefeatures", {'INPUT':vlayer, 'OUTPUT':str(fn)})
+    ```
 </details>
 
 <details markdown="block">
-  <summary>Session 4: Load layers with PyQGIS from shapefile and from csv file. Create and update QGIS project. Layer method "getFeatures" to access features and attributes of a layer. CAOP+INE milk production dataset </summary>
-
-  - Load layers with PyQGIS from shapefile and from csv file; Create and update QGIS project. Download `T04_stopvespa_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with the STOPvespa data set (csv with coordinates)
-  - Same problem, but with different data sets, and a more compact code. Download `T09_caop_ine_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with a new data set (CAOP, Milk production per county from INE). In this case the csv file does not have coordinates.
-  - For the Milk production problem described in [T09 problem description](T09/problem_description.md), one needs to `edit` and `join` attribute tables. Download `T10_caop_ine_edit_and_join_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) to see how one can extend the code in T09 to do this.
- 
+  <summary>Edit attribute table, add new attribute, compute attribute values</summary>
+  
+  - Function that edits a vector layer and computes the values of one field as a function of the values of the other field (T10):
+    ```
+    def my_INE_preprocessing(layer):
+        """
+        Edits the vector layer and make some changes to it
+        The goal is to compute the values of attribute di_co from the values of attribute NUTS_2013
+        Only the values of NUTS_2013 with maximum length are of interest (those are the counties)
+        """
+        # 1st: determine maximum length of NUTS_2013
+        maxDigits=0
+        for feat in layer.getFeatures():
+            if len(feat['NUTS_2013']) > maxDigits:
+               maxDigits=len(feat['NUTS_2013'])
+        
+        # 2nd: for those, compute and store new 4-digit code (last 4 digits) in di_co
+        with edit(layer):
+            for feat in layer.getFeatures():
+                if len(feat['NUTS_2013']) == maxDigits:
+                    feat['di_co'] = feat['NUTS_2013'][-4:] # last 4 digits
+                    # “update-after-change”
+                    res=layer.updateFeature(feat) # 'res' to be silent
+        # return output layer
+        return layer
+    ``` 
+  - Function that adds a field to a layer and computes the values for that field as a function of the values of an existing field (T13):
+    ```
+    def my_add_string_attribute_and_compute_value(layer):
+        '''
+        input: layer
+        creates a new field called 'produces' and computes its values from the values of an existing field 'Total'
+        '''
+        # Create new categorized attribute 'produces' with values 'yes' or 'no'
+        fld=QgsField('produces',QVariant.String)
+        with edit(layer):
+            layer.addAttribute(fld) 
+            layer.updateFields()
+            for feat in layer.getFeatures():
+                if feat['Total'] == 0:
+                    feat['produces'] = 'no' 
+                else:
+                    feat['produces'] = 'yes' 
+                # “update-after-change”
+                layer.updateFeature(feat) # 'res' to be silent
+                return layer
+    ```
 </details>
 
 ## Some useful links
