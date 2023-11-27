@@ -152,6 +152,8 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
         # mylayer is the first in the returned list
         if mylayers:
             mylayer=mylayers[0]
+            # setproject CRS so it is the same as mylayer.crs()
+            QgsProject.instance().setCrs(mylayer.crs())
             # Determine extent
             extent = mylayer.extent()
             iface.mapCanvas().setExtent(extent) 
@@ -202,30 +204,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
         QgsProject().instance().addMapLayer(clone_layer)
         return clone_layer
     ```
-  - Function that executes QGIS tool from processing toolbox with *processing.run*:
-    ```
-    def my_processing_run(operation,ln_input,dict_params,layer_name):
-        """ 
-            function to execute processing.run from a list of parameters
-            it creates a temporary output (in memory)
-            ln_input is either the input layer or the name (a string) of the input layer
-            dict_params: dictionary with operation parameters except 'INPUT' and 'OUTPUT'
-            layer_name: name for the output layer
-            output: output QgsVectorLayer
-        """
-        dict_params['INPUT']=ln_input
-        dict_params['OUTPUT']=QgsProcessing.TEMPORARY_OUTPUT
-        mylayer=processing.run(operation,dict_params)['OUTPUT']
-        mylayer.setName(layer_name)
-        QgsProject().instance().addMapLayer(mylayer)
-        return mylayer
-    ```
-    Example of application (T08):
-    ```
-    params={'PREDICATE':[1], 'INTERSECT':vespa_D}
-    conc_D=my_processing_run("native:extractbylocation", caop, params, ln)
-    ```
-  - Function that reads a delimited text file (e.g. csv or txt), sets encoding to 'utf-8' and adds a memory vector layer to the project:
+  - Function that reads a delimited text file (e.g. csv or txt), sets encoding to 'utf-8' and adds it as a layer to the project:
     ```
     def my_add_layer_from_csv(fn,ln,params):
         """
@@ -249,6 +228,29 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
     ```
     params_ine='?delimiter=;&detectTypes=yes&geomType=none'
     ine=my_add_layer_from_csv(fn,'INE',params_ine)
+    ```
+  - Function that executes QGIS tool from processing toolbox with *processing.run*:
+    ```
+    def my_processing_run(operation,ln_input,dict_params,layer_name):
+        """ 
+            function to execute processing.run from a list of parameters
+            it creates a temporary output (in memory)
+            ln_input is either the input layer or the name (a string) of the input layer
+            dict_params: dictionary with operation parameters except 'INPUT' and 'OUTPUT'
+            layer_name: name for the output layer
+            output: output QgsVectorLayer
+        """
+        dict_params['INPUT']=ln_input
+        dict_params['OUTPUT']=QgsProcessing.TEMPORARY_OUTPUT
+        mylayer=processing.run(operation,dict_params)['OUTPUT']
+        mylayer.setName(layer_name)
+        QgsProject().instance().addMapLayer(mylayer)
+        return mylayer
+    ```
+    Example of application (T08):
+    ```
+    params={'PREDICATE':[1], 'INTERSECT':vespa_D}
+    conc_D=my_processing_run("native:extractbylocation", caop, params, ln)
     ```
   - Function that exports a temporary layer to a file (e.g. a *shapefile*):
     ```
