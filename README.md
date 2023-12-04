@@ -348,6 +348,94 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
     ```
 </details>
 
+<details markdown="block">
+  <summary>Symbology for vector and raster datasets</summary>
+
+  - Function that creates a categorized legend for a vector layer from a dictionary; and function that creates a dictionary 
+    ```
+    def create_categorized_legend(vlayer,attrib,dict):
+      '''
+      input: 
+      1.layer to render, 
+      2. string: attribute to use, 
+      3. dictionary for the legend with key=attribute value and entries 
+      a) string: label, 
+      b) QColor: color, 
+      c) float: opacity
+      no output
+      '''
+        # create categories from mydict
+        categories=[] # empty list
+        for myvalue, (mylabel,myQcolor, myopacity) in dict.items():
+            mysymbol=QgsSymbol.defaultSymbol(vlayer.geometryType())
+            mysymbol.setColor(myQcolor)
+            mysymbol.setOpacity(myopacity)
+            cat=QgsRendererCategory(myvalue, mysymbol, mylabel)
+            categories.append(cat)
+        # create renderer
+        renderer = QgsCategorizedSymbolRenderer(attrib, categories)
+        vlayer.setRenderer(renderer)
+        # Refresh layer
+        vlayer.triggerRepaint()
+
+    # Function that creates a dictionary of random colors
+    def create_random_categorized_dict(myListValues,colorMin=0,colorMax=255,opacity=1):
+        '''
+        function that creates dictionary from list of values
+        requires package random
+        '''
+        myDict={} # initialize
+        # creates dictionary: one entry per value in myListValues
+        for val in myListValues:
+            val = str(val) # to be sure it is a string
+            myR=random.randint(colorMin,colorMax) 
+            myG=random.randint(colorMin,colorMax)
+            myB=random.randint(colorMin,colorMax)
+            myQColor=QColor(myR,myG,myB)
+            # insert a new entry to the dictionary
+            myDict.update({val : (val,myQColor,opacity)})
+        return myDict
+    
+    ```
+    - Function that creates a symbology for a single band raster layer
+
+    ```
+    def create_raster_ramp_legend(lyr,dict, type='Linear'):
+        ''' 
+        legend for raster 
+        type is 'Linear' (interpolated ramp), 'Discrete', 'Exact',...
+        inputs: layer and dictionary with label: (color, limite)
+        '''
+        s = QgsRasterShader()
+        #Then we instantiate the specialized ramp shader object:
+        c = QgsColorRampShader()
+        #We must name a type for the ramp shader. In this case we use an interpolatedshader:
+        if (type=='Linear'): c.setColorRampType(QgsColorRampShader.Interpolated)
+        if (type=='Discrete'): c.setColorRampType(QgsColorRampShader.Discrete)
+        if (type=='Exact'): c.setColorRampType(QgsColorRampShader.Exact)
+        #Now we’ll create a list hold our color ramp definition:
+        i = []
+        #Then we populate the list with color ramp color values corresponding to elevation value ranges:
+        for label, (color, limite) in dict.items():
+            i.append(QgsColorRampShader.ColorRampItem(limite, color, label)) #QColor(color), label))
+        #Now we assign the color ramp to our shader:
+        c.setColorRampItemList(i)
+        #Now we tell the generic raster shader to use the color ramp:
+        s.setRasterShaderFunction(c)
+        #Next we create a raster renderer object with the shader:
+        ps = QgsSingleBandPseudoColorRenderer(lyr.dataProvider(), 1, s)
+        #We assign the renderer to the raster layer:
+        lyr.setRenderer(ps)
+        #Finally we add the layer to the canvas to view it:
+        lyr.triggerRepaint()
+        # should not be necessary
+        iface.layerTreeView().refreshLayerSymbology(lyr.id())
+        return lyr
+    ```
+ 
+</details>
+
+
 ## Some useful links
 <details markdown="block">
   <summary> Documentation (QGIS, PyQGIS) </summary>
