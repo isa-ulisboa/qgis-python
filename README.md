@@ -109,6 +109,16 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
   
 </details>
 
+<details markdown="block">
+  <summary>Session 7: Raster data sets (geotiff files); load with PyQGIS; set nodata value; symbology </summary>
+  
+  - T20: Read single band geotiff file (DEM) with `iface.addRasterLayer`; Extract information about layer (width, height, extent, nodata value); Set nodata value for layer; Contrast enhancement.
+  - T21: As an alternative to using PYQGIS as in T20, the raster file can be opened and processed with Python package `rasterio`; Create histogram; Set nodata value with rasterio; Export raster with rasterio; Note that there is no direct way to convert a rasterio raster object into a QGIS raster layer.
+  - T22: This is a continuation of T20 with the same DEM dataset; Instead of creating a gray symbology (default), one can create a `QgsSingleBandPseudoColorRenderer` and render the raster with colors.
+  - T23: The input is a multiband raster (Sentinel 2 image with four 10 m resolution spectral bands); Load file and create a raster layer; Compute band statistics with PyQGIS;  Create color composites with PyQGIS and contrast enhancement (e.g. mean +/- standard error range)
+  
+</details>
+
 ## Scripts
 <details markdown="block">
   <summary>Project, canvas, manipulate layers and paths</summary>
