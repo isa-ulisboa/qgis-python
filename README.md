@@ -110,7 +110,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 <details markdown="block">
-  <summary>Session 7: Raster data sets (geotiff files); load with PyQGIS; set nodata value; symbology </summary>
+  <summary>Session 7: Raster data sets (geotiff files); load with PyQGIS; set nodata value; package rasterio; symbology </summary>
   
   - T20: Read single band geotiff file (DEM) with `iface.addRasterLayer`; Extract information about layer (width, height, extent, nodata value); Set nodata value for layer; Contrast enhancement.
   - T21: As an alternative to using PYQGIS as in T20, the raster file can be opened and processed with Python package `rasterio`; Create histogram; Set nodata value with rasterio; Export raster with rasterio; Note that there is no direct way to convert a rasterio raster object into a QGIS raster layer.
