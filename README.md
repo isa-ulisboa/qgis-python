@@ -130,6 +130,31 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 ## Scripts
+
+<details markdown="block">
+  <summary>Project, canvas, manipulate layers and paths</summary>
+
+  Below, **it is supposed that there is already a project loaded in QGIS with vector layers**. The scripts below allow to manipulate those layers, zoom to layer, remove layers from the project, etc.
+
+  - Function that returns the path to the current project:
+    ```
+    def my_project_path(my_project):
+        """
+            output: Path to the folder where the project is
+        """
+        # If there is a project, mufolder will be location of the project
+        if my_project.fileName()!='':
+            print('project', Path(my_project.fileName()).stem ,  'loaded')
+            return Path(my_project.homePath())
+        else:
+            print('No project available')
+            return 0 # exits main if there is no project available
+    ```
+    
+  
+</details>
+
+
 <details markdown="block">
   <summary>Project, canvas, manipulate layers and paths</summary>
 
@@ -285,7 +310,7 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
         QgsProject().instance().addMapLayer(mylayer)
         return mylayer
     ```
-    Example of application (T08):
+    Example of a call to this function (T08):
     ```
     params={'PREDICATE':[1], 'INTERSECT':vespa_D}
     conc_D=my_processing_run("native:extractbylocation", caop, params, ln)
