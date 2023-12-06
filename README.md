@@ -121,11 +121,11 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 
 <details markdown="block">
-  <summary>Session 8: Processing raster datasets (geotiff files) with PyQGIS; Exporting a raster layer to file; Combining raster and vector processing to determine solar panels plant locations from sentinel-2 imagery; geopanadas example; Convert geopandas to vector layer with json</summary>
+  <summary>Session 8: Processing raster datasets (geotiff files) with PyQGIS; Exporting a raster layer to file; Combining raster and vector processing to determine solar panels plant locations from sentinel-2 imagery; geopandas example; Convert geopandas dataframe to vector layer with json</summary>
   
   - T24: Clip raster (Sentinel-2 multiband image) by vector layer (county Alcoutim extracted from CAOP) with `gdal:cliprasterbymasklayer` (see two first operations in [this diagram](diagram_exercise_alcoutim.pdf)); Save raster layer as geotiff file with PyQGIS `QgsRasterFileWriter`.
   - T25: Consider the problem of determining the location of solar panels by analyzing Sentinel-2 10 m imagery with PyQGIS; Create script in PyQGIS to implement the sequence of steps in [this diagram](diagram_exercise_alcoutim.pdf) and obtain a vector layer with the approximate extension of industrial solar panels.
-  - T26: Package **geopandas** is an extension of the widely used **pandas** package for data frames (tables). Geopandas tables have a special column called **geometry** that stores the geometry of the respective feature. With this short example, it is shown how to read a shapefile with geopandas, how to perform simple maninupation of the data and do some geoprocessing, and how to convert a geopandas object into a QGIS vector layer for easy visualization in QGIS.
+  - T26: Package **geopandas** is an extension of the widely used **pandas** package for data frames (tables). Geopandas tables have a special column called **geometry** that stores the geometry of the respective feature. With this short example, it is shown how to read a shapefile with geopandas, how to perform simple manipulation of the data and do some geoprocessing, and how to convert a geopandas dataframe into a QGIS vector layer for easy visualization and further processing in QGIS.
   
 </details>
 
