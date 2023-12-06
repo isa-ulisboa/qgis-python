@@ -132,26 +132,69 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 ## Scripts
 
 <details markdown="block">
-  <summary>Project, canvas, manipulate layers and paths</summary>
+  <summary>Simple code to load vector (e.g. shapefile) and raster (e.g. geotiff) files as layers and export vector and raster layers as files </summary>
 
-  Below, **it is supposed that there is already a project loaded in QGIS with vector layers**. The scripts below allow to manipulate those layers, zoom to layer, remove layers from the project, etc.
+  - Create empty project:
+    ```
+    QgsProject.instance().clear()
+    ```
+  - Load shapefile as QGIS vector layer:
+    ```
+    # fn is the path to the file (e.g. with extension .shp)
+    mylayer=iface.addVectorLayer(str(fn),'layer_name','ogr')
+    ```
+  - Load shapefile as *memory* QGIS vector layer:
+    ```
+    # fn is the path to the file (e.g. with extension .shp)
+    mylayer=QgsVectorLayer(str(fn),"", "ogr")
+    mylayer.selectAll()
+    clone_layer = processing.run("native:saveselectedfeatures", {'INPUT': mylayer, 'OUTPUT': 'memory:'})['OUTPUT']
+    mylayer.removeSelection()
+    clone_layer.setName('layer_name')
+    QgsProject().instance().addMapLayer(clone_layer)
+    ```
+  - Load geotiff as QGIS raster layer:
+    ```
+    # fn is the path to the file (e.g. with extension .tif)
+    mylayer=iface.addRasterLayer(fn,'layer_name','gdal')
+    ```
+  - Load openstreetmaps (OSM) as QGIS raster layer:
+    ```
+    uri_OSM = 'type=xyz&url=https://tile.openstreetmap.org/{z}/{x}/{y}.png&zmax=19&zmin=0'
+    iface.addRasterLayer(uri_OSM, "OpenStreetMap", "wms")
+    ```
+  - Save QGIS vector layer as shapefile:
+    ```
+    # fn is the path to the output file (e.g. with extension .shp)
+    processing.run("native:savefeatures", {'INPUT':mylayer, 'OUTPUT':fn})
+    ```
+  - Save QGIS vector layer as shapefile (2nd alternative):
+    ```
+    # fn is the path to the output file (e.g. with extension .shp)
+    # Driver name and encoding
+    options = QgsVectorFileWriter.SaveVectorOptions()
+    options.driverName = 'ESRI Shapefile'
+    options.fileEncoding = 'UTF-8'
+    # instance of QgsCoordinateTransformContext
+    context = QgsProject.instance().transformContext()
+    # write to file
+    QgsVectorFileWriter.writeAsVectorFormatV3(mylayer, fn, context,options)
+    ```
+  - Export QGIS raster layer as geotiff:
+    ```
+    # fn is the path to the output file (e.g. with extension .tif)
+    pipe = QgsRasterPipe()
+    pipe.set(mylayer.dataProvider().clone())
+    file_writer = QgsRasterFileWriter(str(fn))
+    file_writer.writeRaster(pipe, mylayer.width(), mylayer.height(), mylayer.extent(), mylayer.crs())
+    ```
+  - Convert geopandas dataframe to QGIS vector layer:
+    ```
+    # gdf is a geopandas dataframe
+    mylayer = QgsVectorLayer(gdf.to_json(),'layer_name',"ogr")
+    QgsProject.instance().addMapLayer(mylayer)
+    ```
 
-  - Function that returns the path to the current project:
-    ```
-    def my_project_path(my_project):
-        """
-            output: Path to the folder where the project is
-        """
-        # If there is a project, mufolder will be location of the project
-        if my_project.fileName()!='':
-            print('project', Path(my_project.fileName()).stem ,  'loaded')
-            return Path(my_project.homePath())
-        else:
-            print('No project available')
-            return 0 # exits main if there is no project available
-    ```
-    
-  
 </details>
 
 
