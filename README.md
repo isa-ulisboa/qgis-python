@@ -455,16 +455,13 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
   - Function that creates a categorized legend for a vector layer from a dictionary; and function that creates a dictionary 
     ```
     def create_categorized_legend(vlayer,attrib,dict):
-      '''
-      input: 
-      1.layer to render, 
-      2. string: attribute to use, 
-      3. dictionary for the legend with key=attribute value and entries 
-      a) string: label, 
-      b) QColor: color, 
-      c) float: opacity
-      no output
-      '''
+        '''
+        input: 
+        1.layer to render, 
+        2. string: attribute to use, 
+        3. dictionary for the legend where the key is the value the attribute takes, and the values are the class label (a string), the color (QColor object), and the opacity (float)
+        no output
+        '''
         # create categories from mydict
         categories=[] # empty list
         for myvalue, (mylabel,myQcolor, myopacity) in dict.items():
@@ -478,13 +475,14 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
         vlayer.setRenderer(renderer)
         # Refresh layer
         vlayer.triggerRepaint()
-
-    # Function that creates a dictionary of random colors
+    ```
+    Below, is a example of a function that creates a dictionary of random colors.
+    ```
     def create_random_categorized_dict(myListValues,colorMin=0,colorMax=255,opacity=1):
         '''
         function that creates dictionary from list of values
-        requires package random
         '''
+        import random
         myDict={} # initialize
         # creates dictionary: one entry per value in myListValues
         for val in myListValues:
@@ -496,46 +494,43 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
             # insert a new entry to the dictionary
             myDict.update({val : (val,myQColor,opacity)})
         return myDict
-    
     ```
-    - Function that creates a symbology for a single band raster layer
+    - Function that creates a symbology for a single band raster layer.
 
     ```
     def create_raster_ramp_legend(lyr,dict, type='Linear'):
         ''' 
         legend for raster 
-        type is 'Linear' (interpolated ramp), 'Discrete', 'Exact',...
-        inputs: layer and dictionary with label: (color, limite)
+        type is 'Linear' (interpolated ramp, by default), 'Discrete', 'Exact',...
+        inputs: layer and dictionary with label: (color, limit)
         '''
         s = QgsRasterShader()
-        #Then we instantiate the specialized ramp shader object:
+        # Instantiate the specialized ramp shader object:
         c = QgsColorRampShader()
-        #We must name a type for the ramp shader. In this case we use an interpolatedshader:
+        # Name a type for the ramp shader. 
         if (type=='Linear'): c.setColorRampType(QgsColorRampShader.Interpolated)
         if (type=='Discrete'): c.setColorRampType(QgsColorRampShader.Discrete)
         if (type=='Exact'): c.setColorRampType(QgsColorRampShader.Exact)
-        #Now we’ll create a list hold our color ramp definition:
+        # Create a list hold our color ramp definition:
         i = []
-        #Then we populate the list with color ramp color values corresponding to elevation value ranges:
-        for label, (color, limite) in dict.items():
-            i.append(QgsColorRampShader.ColorRampItem(limite, color, label)) #QColor(color), label))
-        #Now we assign the color ramp to our shader:
+        # Populate the list with color ramp color values for each range:
+        for label, (color, limit) in dict.items():
+            i.append(QgsColorRampShader.ColorRampItem(limit, color, label)) 
+        # Assign the color ramp to our shader:
         c.setColorRampItemList(i)
-        #Now we tell the generic raster shader to use the color ramp:
+        # Tell the generic raster shader to use the color ramp:
         s.setRasterShaderFunction(c)
         #Next we create a raster renderer object with the shader:
         ps = QgsSingleBandPseudoColorRenderer(lyr.dataProvider(), 1, s)
-        #We assign the renderer to the raster layer:
+        # Assign the renderer to the raster layer:
         lyr.setRenderer(ps)
         #Finally we add the layer to the canvas to view it:
         lyr.triggerRepaint()
-        # should not be necessary
+        # Should not be necessary
         iface.layerTreeView().refreshLayerSymbology(lyr.id())
         return lyr
     ```
- 
 </details>
-
 
 ## Some useful links
 <details markdown="block">
