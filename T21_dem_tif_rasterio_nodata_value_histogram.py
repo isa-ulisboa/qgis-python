@@ -56,7 +56,10 @@ with rasterio.open(fn) as src: # reads Path directly; does not need to be conver
     try:
         # build histogram with rasterio
         from rasterio.plot import show_hist
-        show_hist(src, bins=50, alpha=0.3, label='m',  title="Histogram before new nodata")
+        plt.close()
+        plt.figure() # new figure
+        show_hist(src, bins=50, alpha=0.3, label='altitude (m)',title="Histogram before new nodata")
+        plt.show()
     except: 
         # otherwise, use numpy and matplotlib
         nodata_value=src.nodata
@@ -68,6 +71,7 @@ with rasterio.open(fn) as src: # reads Path directly; does not need to be conver
 
 # wait 3 seconds
 time.sleep(3)
+plt.clf() # clear figure
 
 ##################################################################  replace nodata by -9999
 # Ask Yes/No question
@@ -98,8 +102,9 @@ with rasterio.open(fn_out) as src:
     try:
         # build histogram with rasterio
         from rasterio.plot import show_hist
-        show_hist(src, bins=50, alpha=0.3, label='m',  title="Histogram after new nodata")
-        src.close()
+        plt.figure() # new figure
+        show_hist(src, bins=50, alpha=0.3, label='altitude (m)',  title="Histogram after new nodata")
+        plt.show()
     except: 
         # otherwise, use numpy and matplotlib
         nodata_value=src.nodata
