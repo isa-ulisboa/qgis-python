@@ -23,6 +23,7 @@ Main links:
 
 ## Main resources for the course 
 
+* [Overview of topics and exercises](overview_pyqgis_geopandas_rasterio.pdf)
 * Course tutorial and a reference guide: [PyQGIS Developer Cookbook](https://docs.qgis.org/3.28/en/docs/pyqgis_developer_cookbook/index.html) or [pdf version](https://docs.qgis.org/testing/pdf/en/QGIS-testing-PyQGISDeveloperCookbook-en.pdf)
 
 ## QGIS instalation:
@@ -125,9 +126,23 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
   
   - T24: Clip raster (Sentinel-2 multiband image) by vector layer (county Alcoutim extracted from CAOP) with `gdal:cliprasterbymasklayer` (see two first operations in [this diagram](diagram_exercise_alcoutim.pdf)); Save raster layer as geotiff file with PyQGIS `QgsRasterFileWriter`.
   - T25: Consider the problem of determining the location of solar panels by analyzing Sentinel-2 10 m imagery with PyQGIS; Create script in PyQGIS to implement the sequence of steps in [this diagram](diagram_exercise_alcoutim.pdf) and obtain a vector layer with the approximate extension of industrial solar panels.
-  - T26: Package **geopandas** is an extension of the widely used **pandas** package for data frames (tables). Geopandas tables have a special column called **geometry** that stores the geometry of the respective feature. With this short example, it is shown how to read a shapefile with geopandas, how to perform simple manipulation of the data and do some geoprocessing, and how to convert a geopandas dataframe into a QGIS vector layer for easy visualization and further processing in QGIS.
   
 </details>
+
+
+<details markdown="block">
+  <summary>Session 9: Geopandas example; Convert geopandas dataframe to vector layer with json; Merge tables with Pandas and Geopandas; Export geopandas as shapefile; </summary>
+
+Package **geopandas** is an extension of the widely used **pandas** package for data frames (tables). Geopandas tables have a special column called **geometry** that stores the geometry of the respective feature. 
+  
+  - T26: With this short example, it is shown how to read a shapefile with geopandas, how to perform simple manipulation of the data and do some geoprocessing, and how to convert a geopandas dataframe into a QGIS vector layer for easy visualization and further processing in QGIS.
+  - T27: The goal of the exercise is to join by attributes a shapefile of counties and a table of wine production from each county. This could be done as in T11 with PyQGIS using tool `native:joinattributestable`. Here, instead, the shapefile and the tables are read with Pandas and Geopandas, and the tables are preprocessed with Pandas and merged with `merge`. Finally, the resulting merged table with geometries and wine production values is exported to a *shapefile* using Geopandas.
+  - T28: The goal of the exercise is to create legends for the wine production for all the available years. The distribution of production values is very skewed so equal class intervals are not ideal. It would be easy to create a separate legend for each year as in T19 which uses Jenks to define the ranges of N classes for a graduated symbology. However, the legends for the different years would not be comparable since the ranges would be different. In this example, a commom symbology is created for all years. This is done in this example by reading the data with Geopandas, creating a list with all production values, and using Python `Jenkspy` package to compute the Jenks breaks for that list. Then, a unique dictionary of ranges for all years is created.  Finally, for any given year, that dictionary is used to create the graduated symbology renderer for the vector layer in QGIS that represents the prodution for that specific year. To visualize the different years, the script also includes lines of code to turn on/off the visibility of each layer as in T02.
+  - T29: This script re-uses a large of the code from T28. The goal is to create automatically map outputs in format `pdf` or `png` with map, legend, scale bar and title. This is aplied to a single year but can be easily encapsulated in a *for loop* that would create a file per year, with all maps sharing the same legend. The script shows how PyQGIS has access to the QGIS Layout Manager.
+
+</details>
+
+
 
 ## Scripts
 
