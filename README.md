@@ -85,12 +85,12 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
   <summary>Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib </summary>
 
   - T07: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. The goal is to define functions and make code in T06  more compact and modular.
-  - T08: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. Define functions and make Python code modular. Create a separate file `my_functions.py` to store functons and load that file from the script. Simplify the code for the STOPvespa problem and organize the script by defining the main chunk of code with `def main()` and then calling it with `main()`. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. 
+  - T08: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. Again, it is explored how to define functions and make the script more modular. Create a separate file `my_functions.py` to store functons and load that file from the script. Simplify the code for the STOPvespa problem and organize the script by defining the main chunk of code with `def main():` and then calling it with `main()`. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. 
   
 </details>
 
 <details markdown="block">
-  <summary>Session 4: Load layers with PyQGIS from shapefile and from csv file; create and update QGIS project; edit attribute table; CAOP+INE milk production dataset; T09; T10 </summary>
+  <summary>Session 4: Load layers with PyQGIS from shapefile and from csv file; create and update QGIS project; edit attribute table; CAOP+INE milk production dataset</summary>
   
   - T04: The goals of this script are creating and saving a new project. The script reads a shapefile as QGIS vector layer, changes the layer encoding, and reads a `csv` file as a text delimited QGIS layer.
   - T09: The goals are the same as T04, but with different data sets, and a more compact code. The new data set includes the location of Portuguese counties (CAOP) and a table of  Milk production per county from INE. In this case the csv file does not have coordinates while the one in T04 has. Therefore, the parameters for reading the `csv` file are different in T04 and T09.
@@ -99,14 +99,18 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
 </details>
 
 <details markdown="block">
-  <summary>Session 5: Layer capabilities for editing; Symbology for vector layers: single symbol and categorized symbol; T11, T12, T13, T14 </summary>
+  <summary>Session 5: Join tables;  Symbology for vector layers: single symbol and categorized symbol</summary>
   
-  - The appearance of the layer is given by `layer.renderer()`: this includes symbols associated to the layer. Symbols are classes which take care of drawing of visual representation of features, while renderers determine what symbol will be used for a particular feature. Symbols are generated from classes `QgsMarkerSymbol`, `QgsLineSymbol` and `QgsFillSymbol` depending on the geometry of the feature. The following table show the combinations of geometries and types for single, categorized and graduated renderers [geometry vs type](vector_layers_symbols.png).
+  - T11: The data sets are again CAOP and a milk production table. The script shows how to join tables with `native:joinattributestable` to pass the values of milk production to the attribute table of the spatial dataset CAOP.
+  - The appearance of the layer is given by `layer.renderer()`: this includes symbols associated to the layer. Symbols are classes which take care of drawing of visual representation of features, while renderers determine what symbol will be used for a particular feature. Symbols are generated from classes `QgsMarkerSymbol`, `QgsLineSymbol` and `QgsFillSymbol` depending on the geometry of the feature. See the following table for the combinations of geometries and types for single, categorized and graduated renderers [geometry vs type](vector_layers_symbols.png).
+  - T12: The CAOP data set is rendered with `QgsSingleSymbolRenderer`. The script shows how to change vector layer symbology -- color, transparency, stoke_width, etc -- for single symbols.
+  - T13: The goal is to change the legend to show which are the counties that produce milk and the ones that don't. In order to do this, one need to create a new categorical variable that gives that information. This is done by creating a new attribute with `QgsField` and  `addAttribute`. Then, the values for the new attribute are computed by visiting the attribute table with `getFeatures()`.
+  - T14 is the continuation of T13 and focus on the creation of the renderer to change the layer's symbology. It is created with `QgsCategorizedSymbolRenderer` and uses the new categorized variable defined in T13. 
   
 </details>
 
 <details markdown="block">
-  <summary>Session 6: Categorized and graduated symbols; using dictionaries and functions to create vector layer renderers; T15 to T19 </summary>
+  <summary>Session 6: Categorized and graduated symbols; using dictionaries and functions to create vector layer renderers</summary>
   
   - T15, an improvement of T14. A dictionary is created to hold the categories for the renderer. Therefore, one can create a dictionary with an arbitrary number of categories and call a function to convert that dictionary into a renderer to change the layer's legend.
   - T16: Graduated symbols. In this example, we use a color ramp similarly to what is done "by hand" in QGIS. One can choose the color ramp, the number of classes and the classification method as in the symbology interface for graduated symbols. The code to define the  renderer is encapsulated in a function.
