@@ -54,7 +54,6 @@ with rasterio.open(fn) as src: # reads Path directly; does not need to be conver
     print(src.meta) # meta data
     # Create histogram 
     try:
-        raise TypeError()
         # build histogram with rasterio
         from rasterio.plot import show_hist
         show_hist(src, bins=50, alpha=0.3, label='m',  title="Histogram before new nodata")
@@ -97,7 +96,6 @@ with rasterio.open(fn) as src:
 with rasterio.open(fn_out) as src:
     print('nodata value is', src.nodata)
     try:
-        raise TypeError()
         # build histogram with rasterio
         from rasterio.plot import show_hist
         show_hist(src, bins=50, alpha=0.3, label='m',  title="Histogram after new nodata")
