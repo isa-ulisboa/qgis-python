@@ -59,36 +59,42 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 </details>
 
 ## Sessions
+
+Each topic (or task) *Txx* listed below corresponds to a folder that can be downloaded from this [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). 
+
 <details markdown="block">
 
-  <summary>Session 1: Introduction; Python Console and editor in QGIS; Processing/History; processing.run(); STOPvespa dataset; T01</summary>
+  <summary>Session 1: Introduction; Python Console and editor in QGIS; Processing/History; processing.run(); STOPvespa dataset</summary>
   
   - Introduction to PyQGIS
-  - Dataset STOPvespa. Download `T01_stopvespa_processing_run` from the [Shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). The goal is to load and visualize the data, and create a QGIS project "by hand". Then, create the first script in Python to perform some simple operations: `extract by expression` and `extract by location`. To do this, one first execute the operations with tools in Processing/Toolbox, and then use Processing/History to copy the respective commands to the Python editor in the appropriate order. Those topics are described in the first playlist in the [@qgisiwthpython Youtube channel](https://www.youtube.com/@qgisiwthpython).
+  - T01: this first exercise uses two vector datasets, one that is loaded from a `shapefile` that represents Portuguese counties, and a point dataset (STOPvespa of locations of Asian hornet nests) that is read from a `csv` file. The goal is to load and visualize the data, and create a QGIS project "by hand"; Create the first script in Python to perform some simple operations: `extract by expression` and `extract by location`. To do this, one first execute the operations with tools in Processing/Toolbox, and then use Processing/History to copy the respective commands to the Python editor in the appropriate order. Those topics are described in the first playlist in the [@qgisiwthpython Youtube channel](https://www.youtube.com/@qgisiwthpython).
 
 </details>
 
 <details markdown="block">
-<summary>Session 2: Access to layers; Access to project and canvas; Zoom to layer; Improving previous script; T02; T06</summary>
+<summary>Session 2: Access to layers; Access to project and canvas; Zoom to layer; Use pathlib for paths and file names</summary>
 
-  - Accessing a QGIS project programmatically. Download `T02_stopvespa_project_canvas_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
-  - Improve script created by copy/paste from processing history in `T01_stopvespa_processing_run`: download `T06_stopvespa_redo_processing_run` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh).
+  - T02: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. The goal is to access the QGIS project programmatically with PyQGIS. The script includes code to access and read a project, access the QGIS canvas, set the project coordinate reference system, list layers in canvas or project, refresh canvas, access a layer by name, change the layer name, extract the extent of a layer, zoom to layer, read the layer's id, access the `layerTreeRoot` and the available `QgsLayerTreeLayer`, and toggle layer visibility.
+  - T03: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. The ultimate goal is to be able to change the orders of layer in the *Layers panel* programatically with PyQGIS. To do this, one needs to access the `QgsLayerTree` instance (root) and then, access and individual layer with a `QgsLayerTreeLayer` object. Finally, one needs to be able to clone, insert and remove object of class `QgsLayerTreeLayer` in the root. It is shown how to save changes in the project with action `mActionSaveProject`. The script also show how to create a second canvas in QGIS.
+  - T05: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. The script shows how to export a QGIS vector layer as shapefile.
+  - T06: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. The goal is to improve T02 in order to use paths relative to the project file location, use memory layers for intermediate results, save the final layer as file, use a variable (D) that defines the diameter threshold for the problem of determining the counties where nests larger than D occur. Module `Path` from package `pathlib` is used to manage paths and file names.
 
 </details>
 
 <details markdown="block">
-  <summary>Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib; T08 </summary>
+  <summary>Session 3: Define functions and make Python code modular; Loops and conditionals; matplotlib </summary>
 
-  - Define functions and make Python code modular. Simplify code for the STOPvespa problem. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. Download `T08_stopvespa_proc_run_myfunctions` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh). 
+  - T07: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. The goal is to define functions and make code in T06  more compact and modular.
+  - T08: It is assumed that the project `stopvespa.qgz` is loaded in QGIS before running the script. Define functions and make Python code modular. Create a separate file `my_functions.py` to store functons and load that file from the script. Simplify the code for the STOPvespa problem and organize the script by defining the main chunk of code with `def main()` and then calling it with `main()`. Create a loop over wasp nest diameters and plot results with Python package `matplotlib`. 
   
 </details>
 
 <details markdown="block">
   <summary>Session 4: Load layers with PyQGIS from shapefile and from csv file; create and update QGIS project; edit attribute table; CAOP+INE milk production dataset; T09; T10 </summary>
-
-  - Load layers with PyQGIS from shapefile and from csv file; Create and update QGIS project. Download `T04_stopvespa_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with the STOPvespa data set (csv with coordinates)
-  - Same problem, but with different data sets, and a more compact code. Download `T09_caop_ine_create_project_add_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) for an exemple with a new data set (CAOP, Milk production per county from INE). In this case the csv file does not have coordinates.
-  - For the Milk production problem described in [T09 problem description](T09/problem_description.md), one needs to `edit` and `join` attribute tables. Download `T10_caop_ine_edit_and_join_layers` from the [shared folder](https://ulisboa-my.sharepoint.com/:f:/g/personal/mlc_office365_ulisboa_pt/ElM7jQ_b__lEkznQ6mVRuhsBESim1iSIdK0v_7kXgvHw6A?e=UFWqMh) to see how one can extend the code in T09 to do this.
+  
+  - T04: The goals of this script are creating and saving a new project. The script reads a shapefile as QGIS vector layer, changes the layer encoding, and reads a `csv` file as a text delimited QGIS layer.
+  - T09: The goals are the same as T04, but with different data sets, and a more compact code. The new data set includes the location of Portuguese counties (CAOP) and a table of  Milk production per county from INE. In this case the csv file does not have coordinates while the one in T04 has. Therefore, the parameters for reading the `csv` file are different in T04 and T09.
+  - T10: Extend T09 to `edit` and `join` attribute tables with PyQGIS. Namely, the script shows how PyQGIS can be used to edit the attribute table with `QgsField` and `addAttribute`. Check with `dataProvider().capabilitiesString()` if the attribute table can be edited. Access features and attributes with `getFeatures()`.
     
 </details>
 
@@ -132,11 +138,8 @@ Below are included step-by-step instruction for installing QGIS through OSGeo4W 
 
 <details markdown="block">
   <summary>Session 9: Geopandas example; Convert geopandas dataframe to vector layer with json; Merge tables with Pandas and Geopandas; Export geopandas as shapefile; Use Python to create common symbology for maps that represent productions in distinct years; Access Layout manager with PyQGIS and export maps as pdf or png</summary>
-
-
-Package **Geopandas** is an extension of the widely used **Pandas** package for data frames (tables). Geopandas tables have a special column called **geometry** that stores the geometry of the respective feature. 
   
-  - T26: With this short example, it is shown how to read a shapefile with Geopandas, how to perform simple manipulation of the data and do some geoprocessing, and how to convert a Geopandas dataframe into a QGIS vector layer for easy visualization and further processing in QGIS.
+  - T26: Package **Geopandas** is an extension of the widely used **Pandas** package for data frames (tables). Geopandas tables have a special column called **geometry** that stores the geometry of the respective feature. With this short example, it is shown how to read a shapefile with Geopandas, how to perform simple manipulation of the data and do some geoprocessing, and how to convert a Geopandas dataframe into a QGIS vector layer for easy visualization and further processing in QGIS.
   - T27: The goal of the exercise is to join by attributes a shapefile of counties and a table of wine production from each county. This could be done as in T11 with PyQGIS using tool `native:joinattributestable`. Here, instead, the shapefile and the tables are read with Pandas and Geopandas, and the tables are preprocessed with Pandas and merged with `merge`. Finally, the resulting merged table with geometries and wine production values is exported to a *shapefile* using Geopandas.
   - T28: The goal of the exercise is to create legends for the wine production for all the available years. The distribution of production values is very skewed so equal class intervals are not ideal. It would be easy to create a separate legend for each year as in T19 which uses Jenks to define the ranges of N classes for a graduated symbology. However, the legends for the different years would not be comparable since the ranges would be different. In this example, a commom symbology is created for all years. This is done in this example by reading the data with Geopandas, creating a list with all production values, and using Python `Jenkspy` package to compute the Jenks breaks for that list. Then, a unique dictionary of ranges for all years is created.  Finally, for any given year, that dictionary is used to create the graduated symbology renderer for the vector layer in QGIS that represents the prodution for that specific year. To visualize the different years, the script also includes lines of code to turn on/off the visibility of each layer as in T02.
   - T29: This script re-uses a large of the code from T28. The goal is to create automatically map outputs in format `pdf` or `png` with map, legend, scale bar and title. This is aplied to a single year but can be easily encapsulated in a *for loop* that would create a file per year, with all maps sharing the same legend. The script shows how PyQGIS has access to the QGIS Layout Manager.
