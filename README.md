@@ -536,6 +536,14 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
         iface.layerTreeView().refreshLayerSymbology(lyr.id())
         return lyr
     ```
+    The dictionary input for the function above could be something like the following:
+    ```
+      dict={
+      'cluster1': (QColor('red'),0),
+      'cluster2': (QColor('yellow'),1),
+      'cluster3': (QColor('black'),2)
+      }
+    ```
 </details>
 
 ## Some useful links
