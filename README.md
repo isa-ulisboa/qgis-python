@@ -400,13 +400,7 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
   
   PyQGIS provides methods to add new attributes to the attribute table with `layer.addAttribute(fld)` where `fld` is an object of class `QgsField`. It also provides a method to delete attributes, with `layer.deleteAttribute(index_of_the_field)`. After changes are made, the layer needs to be updated with `layer.updateFields()`.
   
-   To iterate over all features from a layer, on can use the *for loop* `for feat in layer.getFeatures():`. Then, the value of some attribute is accessible with `feat['attribute name']`. One can also add a new feature to the attribute table with `layer.addFeature(feat)` where `feat` is an object of class `QgsFeature`, or remove a feature with `layer.deleteFeature(id_of_the_feature)`. The geometry of some feature can be set or changed with `feat.setGeometry(geom)`or `layer.changeGeometry(id_of_the_feature,geom)`, where `geom`is an object of class `QgsGeometry`. After changes are made, the feature needs to be updated with `layer.updateFeature(feat)`.
-
-</details>
-
-<details markdown="block">
-  <summary>Edit attribute table, add new attribute, compute attribute values</summary>
-
+   To iterate over all features from a layer, on can use the *for loop* `for feat in layer.getFeatures():`. Then, the value of some attribute is accessible with `feat[attribute_name]`. One can also add a new feature to the attribute table with `layer.addFeature(feat)` where `feat` is an object of class `QgsFeature`, or remove a feature with `layer.deleteFeature(id_of_the_feature)`. The geometry of some feature can be set or changed with `feat.setGeometry(geom)`or `layer.changeGeometry(id_of_the_feature,geom)`, where `geom`is an object of class `QgsGeometry`. After changes are made, the feature needs to be updated with `layer.updateFeature(feat)`.
   
   - Function that edits a vector layer and computes the values of one field as a function of the values of the other field (T10):
     ```
@@ -487,6 +481,7 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
     def create_random_categorized_dict(myListValues,colorMin=0,colorMax=255,opacity=1):
         '''
         function that creates dictionary from list of values
+        myListValues is a list of values: each value corresponds to an item of the dictionary
         '''
         import random
         myDict={} # initialize
@@ -501,7 +496,12 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
             myDict.update({val : (val,myQColor,opacity)})
         return myDict
     ```
-    - Function that creates a symbology for a single band raster layer.
+    The list `myListValues`could for instance be determined from the layer and the attribute that is used to create the legend.
+    ```
+    idx = mylayer.fields().indexOf(attribute_name)
+    myListValues = list(mylayer.uniqueValues(idx)) # need to be converted in list since uniqueValues returns a "set"
+    ```
+- Function that creates a symbology for a single band raster layer.
 
     ```
     def create_raster_ramp_legend(lyr,dict, type='Linear'):
