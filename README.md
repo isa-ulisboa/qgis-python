@@ -141,7 +141,7 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
 
 
 <details markdown="block">
-  <summary>Session 9: Geopandas example; Convert Geopandas dataframe to vector layer with json; Merge tables with Pandas and Geopandas; Export geopandas as shapefile; Use Python to create a common legend for yearly maps; Access Layout manager with PyQGIS and export maps as pdf or png</summary>
+  <summary>Session 9: Geopandas example; Convert Geopandas dataframe to vector layer with json; Merge tables with Pandas and Geopandas; Export Geopandas as shapefile; Use Python to create a common legend for yearly maps; Access Layout manager with PyQGIS and export maps as pdf or png</summary>
   
   - T26: Package **Geopandas** is an extension of the widely used **Pandas** package for data frames (tables). Geopandas tables have a special column called **geometry** that stores the geometry of the respective feature. With this short example, it is shown how to read a shapefile with Geopandas, how to perform simple manipulation of the data and do some geoprocessing, and how to convert a Geopandas dataframe into a QGIS vector layer for easy visualization and further processing in QGIS.
   - T27: The goal of the exercise is to join by attributes a shapefile of counties and a table of wine production from each county. This could be done as in T11 with PyQGIS using tool `native:joinattributestable`. Here, instead, the shapefile and the tables are read with Pandas and Geopandas, and the tables are preprocessed with Pandas and merged with `merge`. Finally, the resulting merged table with geometries and wine production values is exported to a *shapefile* using Geopandas.
@@ -401,6 +401,12 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
   PyQGIS provides methods to add new attributes to the attribute table with `layer.addAttribute(fld)` where `fld` is an object of class `QgsField`. It also provides a method to delete attributes, with `layer.deleteAttribute(index_of_the_field)`. After changes are made, the layer needs to be updated with `layer.updateFields()`.
   
    To iterate over all features from a layer, on can use the *for loop* `for feat in layer.getFeatures():`. Then, the value of some attribute is accessible with `feat['attribute name']`. One can also add a new feature to the attribute table with `layer.addFeature(feat)` where `feat` is an object of class `QgsFeature`, or remove a feature with `layer.deleteFeature(id_of_the_feature)`. The geometry of some feature can be set or changed with `feat.setGeometry(geom)`or `layer.changeGeometry(id_of_the_feature,geom)`, where `geom`is an object of class `QgsGeometry`. After changes are made, the feature needs to be updated with `layer.updateFeature(feat)`.
+
+</details>
+
+<details markdown="block">
+  <summary>Edit attribute table, add new attribute, compute attribute values</summary>
+
   
   - Function that edits a vector layer and computes the values of one field as a function of the values of the other field (T10):
     ```
