@@ -132,10 +132,11 @@ Each topic (or task) *Txx* listed below corresponds to a folder that can be down
 
 
 <details markdown="block">
-  <summary>Session 8: Processing raster datasets (geotiff files) with PyQGIS; Exporting a raster layer to file; Combining raster and vector processing to determine solar panels plant locations from Sentinel-2 imagery</summary>
+  <summary>Session 8: Processing raster datasets (geotiff files) with PyQGIS; Exporting a raster layer to file; Combining raster and vector processing to determine solar panels plant locations from Sentinel-2 imagery; Rasterio geoprocessing tools</summary>
   
   - T24: Clip raster (Sentinel-2 multiband image) by vector layer (county Alcoutim extracted from CAOP) with `gdal:cliprasterbymasklayer` (see two first operations in [this diagram](diagram_exercise_alcoutim.pdf)); Save raster layer as geotiff file with PyQGIS `QgsRasterFileWriter`.
   - T25: Consider the problem of determining the location of solar panels by analyzing Sentinel-2 10 m imagery with PyQGIS; Create script in PyQGIS to implement the sequence of steps in [this diagram](diagram_exercise_alcoutim.pdf) and obtain a vector layer with the approximate extension of industrial solar panels.
+  - T25B: In this script, it is illustrated how some of the geoprocessing steps in T25 can be done with rasterio instead of PyQGIS. Arithmetic and logical operations can be applied directly, in a more straightforward manner than `raster calculator` in PyQGIS; Apply a seive to a raster with `rasterio.features.sieve`; Export rasterio to `tif` with `rasterio.open` in writing mode.
   
 </details>
 
