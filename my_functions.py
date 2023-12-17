@@ -266,6 +266,22 @@ def my_create_sturges_graduated_legend_dict(vlayer,attrib,colormap,myopacity,uni
         D[mylabel]= (classMin,classMax,myQColor,myopacity)
     return D # dictionary
 
+############################# Create symbology using all years between year_start and year_end
+def my_create_jenks_symbology(fn,N,year_start,year_end,my_colormap,my_opacity,my_units):
+    import jenkspy
+    # 1. Read data with geopandas and select columns of production (years)
+    gdf=gpd.read_file(fn)
+    df_all = pd.DataFrame(gdf.drop(columns='geometry')) # drop geometries and convert to pandas dataframe
+    cols=df_all.columns[(df_all.columns >= year_start) & (df_all.columns <= year_end)]
+    df=df_all[cols]
+    # 2. Compute breaks for classes (Jenks)
+    # flatten dataframe to a single list of values
+    x= df.to_numpy().flatten()
+    # compute jenks breaks
+    breaks=jenkspy.jenks_breaks(x, n_classes=10)
+    # 3. create dictionary for legend
+    dict_legend=my_create_graduated_legend_from_breaks_dict(breaks,my_colormap,my_opacity,my_units)
+    return dict_legend
 
 # adapted from my_create_sturges_graduated_legend_dict(vlayer,attrib,colormap,myopacity,units)  (T19)
 def my_create_graduated_legend_from_breaks_dict(breaks,colormap,myopacity,units):
@@ -382,3 +398,83 @@ def my_set_vector_graduated_ramp_legend(vlayer,value_field,num_classes,ramp_name
     vlayer.setRenderer(my_renderer)
     # Refresh layer
     vlayer.triggerRepaint()
+
+##################################################### Layout manager
+def my_create_layout_manager(layout_name):
+    manager = QgsProject.instance().layoutManager()
+    layoutName = layout_name
+    layouts_list = manager.printLayouts()
+    # remove any duplicate layouts
+    for layout in layouts_list:
+        if layout.name() == layoutName:
+            manager.removeLayout(layout)
+    layout = QgsPrintLayout(QgsProject.instance())
+    layout.initializeDefaults()
+    layout.setName(layoutName)
+    manager.addLayout(layout)
+    return manager,layout
+
+############################################## create map item in the layout
+def my_add_map_to_layout(layout,layer,X,Y,width,height):
+    map = QgsLayoutItemMap(layout)
+    map.setRect(20, 20, 20, 20)
+    # set the map extent
+    ms = QgsMapSettings()
+    ms.setLayers([layer]) # set layers to be mapped
+    rect = QgsRectangle(ms.fullExtent())
+    rect.scale(1.7)
+    ms.setExtent(rect)
+    map.setExtent(rect)
+    map.setBackgroundColor(QColor(255, 255, 255, 0))
+    layout.addLayoutItem(map)
+    # resize and move
+    map.attemptMove(QgsLayoutPoint(X, Y, QgsUnitTypes.LayoutMillimeters))
+    map.attemptResize(QgsLayoutSize(width,height, QgsUnitTypes.LayoutMillimeters))
+    return map
+
+############################################ add scale bar
+def my_add_scale_bar_to_layout(layout,map,size, X,Y,segments,units):
+    scalebar = QgsLayoutItemScaleBar(layout)
+    scalebar.setStyle('Line Ticks Up')
+    scalebar.setUnits(QgsUnitTypes.DistanceKilometers)
+    scalebar.setNumberOfSegments(segments)
+    scalebar.setNumberOfSegmentsLeft(0)
+    scalebar.setUnitsPerSegment(units)
+    scalebar.setLinkedMap(map)
+    scalebar.setUnitLabel('km')
+    scalebar.setFont(QFont('Arial', size))
+    scalebar.update()
+    layout.addLayoutItem(scalebar)
+    scalebar.attemptMove(QgsLayoutPoint(X,Y, QgsUnitTypes.LayoutMillimeters))
+
+
+########################################## add label to layout
+def my_add_label_to_layout(layout,label,size,X,Y,minsizeX,minsizeY):
+    title = QgsLayoutItemLabel(layout)
+    title.setText(label)
+    text_format = QgsTextFormat()
+    text_format.setFont(QFont("Arial"))
+    text_format.setSize(size)
+    title.setTextFormat(text_format)
+    title.adjustSizeToText()
+    # minimum box size for label
+    title.setMinimumSize(QgsLayoutSize(minsizeX,minsizeY, QgsUnitTypes.LayoutMillimeters))
+    title.update()
+    layout.addLayoutItem(title)
+    title.attemptMove(QgsLayoutPoint(X, Y, QgsUnitTypes.LayoutMillimeters))
+
+# add picture to layout
+def my_add_picture_to_layout(layout,fn,X,Y,width,height):
+    north = QgsLayoutItemPicture(layout)
+    north.setPicturePath(str(fn))
+    layout.addLayoutItem(north)
+    north.attemptResize(QgsLayoutSize(width,height,QgsUnitTypes.LayoutMillimeters))
+    north.attemptMove(QgsLayoutPoint(X,Y,QgsUnitTypes.LayoutMillimeters))
+
+# add legend to layout
+def my_add_legend_to_layout(layout,layerTree,X,Y):
+    legend = QgsLayoutItemLegend(layout)
+    legend.setTitle("")
+    legend.model().setRootGroup(layerTree)
+    layout.addLayoutItem(legend)
+    legend.attemptMove(QgsLayoutPoint(X,Y, QgsUnitTypes.LayoutMillimeters))
